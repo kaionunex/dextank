@@ -32,7 +32,7 @@ function Page() {
         },
         {
           h: "Produto e compatibilidade",
-          p: "O Dex Tank é um acessório de reposição desenvolvido e fabricado sob encomenda da marca Dex, sem qualquer vínculo, afiliação ou endosso da Yamaha Motor. A marca é citada apenas para indicar compatibilidade com os modelos Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026. Verifique a compatibilidade antes da compra.",
+          p: "O Dex Tank é um acessório desenvolvido como melhoria para o bocal do tanque, fabricado pela marca Dex e comercializado pela Inter Commerce Group LTDA, sem qualquer vínculo, afiliação ou endosso da Yamaha Motor. A marca é citada apenas para indicar compatibilidade com os modelos Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026. Verifique a compatibilidade antes da compra.",
         },
         {
           h: "Instalação e uso",
