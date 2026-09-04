@@ -75,29 +75,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="space-y-2 border-t border-border pt-6 text-xs leading-relaxed">
+        <div className="space-y-3 border-t border-border pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>
-            <strong className="text-foreground">Aviso de marca:</strong> o Dex Tank é um acessório
-            de reposição desenvolvido e fabricado sob encomenda da marca Dex, comercializada por{" "}
-            {EMPRESA.razaoSocial}. Não é um produto original Yamaha e não possui qualquer vínculo,
-            afiliação, patrocínio ou endosso da Yamaha Motor. As marcas “Yamaha” e “FZ15” são de
-            seus respectivos titulares e são citadas exclusivamente para indicar a compatibilidade
-            do produto.
+            O Dex Tank é um acessório desenvolvido como melhoria para o bocal do tanque, fabricado
+            pela marca Dex e comercializado por {EMPRESA.razaoSocial}. Não é um produto original
+            Yamaha e não possui qualquer vínculo, afiliação, patrocínio ou endosso da Yamaha Motor.
+            As marcas “Yamaha” e “FZ15” são de seus respectivos titulares e são citadas
+            exclusivamente para indicar a compatibilidade do produto.
           </p>
           <p>
-            <strong className="text-foreground">Imagens:</strong> as imagens deste site são
-            meramente ilustrativas e podem não representar exatamente o produto recebido.
+            Preços, condições de pagamento, prazos e disponibilidade de frete grátis são válidos por
+            tempo limitado, sujeitos a alteração sem aviso prévio e à confirmação no momento do
+            checkout. A instalação é de responsabilidade do comprador; siga as instruções e não
+            abasteça com o motor ligado.
           </p>
           <p>
-            <strong className="text-foreground">Oferta:</strong> preços, condições de pagamento,
-            prazos e disponibilidade de frete grátis são válidos por tempo limitado, sujeitos a
-            alteração sem aviso prévio e à confirmação no momento do checkout. A instalação é de
-            responsabilidade do comprador; siga as instruções e não abasteça com o motor ligado.
-          </p>
-          <p>
-            <strong className="text-foreground">Independência de plataformas:</strong> este site não
-            é afiliado, associado, autorizado ou endossado por Meta Platforms (Facebook e
-            Instagram), TikTok, Google, YouTube ou qualquer uma de suas subsidiárias.
+            Este site não é afiliado, associado, autorizado ou endossado por Meta Platforms
+            (Facebook e Instagram), TikTok, Google, YouTube ou qualquer uma de suas subsidiárias.
           </p>
           <p>
             © {new Date().getFullYear()} {EMPRESA.razaoSocial}. Todos os direitos reservados.
