@@ -21,7 +21,7 @@ export function Offer() {
           </span>
           <img
             src={produto}
-            alt="Adaptador de bocal para o tanque de combustível da Yamaha FZ15 DEX Tank visto de frente"
+            alt="Adaptador de bocal para o tanque de combustível da Yamaha FZ15 Dex Tank visto de frente"
             width={1024}
             height={1024}
             loading="lazy"
@@ -29,7 +29,7 @@ export function Offer() {
           />
           <div>
             <h2 className="font-display text-2xl text-foreground sm:text-3xl">
-              DEX Tank — Adaptador Articulado do Bocal
+              Dex Tank — Adaptador Articulado do Bocal
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
               1 unidade + adaptador de acabamento + instruções de instalação. Compatível com Yamaha
@@ -148,7 +148,7 @@ export function FinalCta() {
           Sua FZ15 merece essa <span className="text-primary">praticidade</span>
         </h2>
         <p className="mt-3 text-muted-foreground">
-          Produção própria e estoque limitado por lote. Garanta o seu DEX Tank com frete grátis
+          Produção própria e estoque limitado por lote. Garanta o seu Dex Tank com frete grátis
           enquanto a oferta está no ar.
         </p>
         <div className="mx-auto mt-6 max-w-md">

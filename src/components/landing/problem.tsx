@@ -39,7 +39,9 @@ export function BeforeAfter() {
                 </div>
               </div>
               <div className="flex flex-col p-6 sm:p-8">
-                <h3 className="font-display text-lg text-destructive sm:text-xl">Dificuldade e riscos</h3>
+                <h3 className="font-display text-lg text-destructive sm:text-xl">
+                  Dificuldade e riscos
+                </h3>
                 <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2.5">
                     <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden="true" />
@@ -79,7 +81,9 @@ export function BeforeAfter() {
                 </div>
               </div>
               <div className="flex flex-col p-6 sm:p-8">
-                <h3 className="font-display text-lg text-success sm:text-xl">Tecnologia e praticidade</h3>
+                <h3 className="font-display text-lg text-success sm:text-xl">
+                  Tecnologia e praticidade
+                </h3>
                 <ul className="mt-4 space-y-3 text-sm text-foreground">
                   <li className="flex items-start gap-2.5 font-medium">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden="true" />

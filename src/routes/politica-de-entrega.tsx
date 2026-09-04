@@ -4,10 +4,11 @@ import { PolicyPage } from "@/components/landing/policy-page";
 export const Route = createFileRoute("/politica-de-entrega")({
   head: () => ({
     meta: [
-      { title: "Política de Entrega | DEX Tank" },
+      { title: "Política de Entrega | Dex Tank" },
       {
         name: "description",
-        content: "Como funcionam o envio, o frete grátis e o rastreio do seu pedido para todo o Brasil.",
+        content:
+          "Como funcionam o envio, o frete grátis e o rastreio do seu pedido para todo o Brasil.",
       },
       { property: "og:title", content: "Política de Entrega" },
       { property: "og:description", content: "Envio para todo o Brasil com rastreio." },

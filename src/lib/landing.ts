@@ -1,13 +1,13 @@
 export const CHECKOUT_URL = "#";
 
 export const MARCA = {
-  nome: "DEX Tank",
-  marcaCurta: "DEX",
+  nome: "Dex Tank",
+  marcaCurta: "Dex",
   subtitulo: "Adaptador de bocal para Yamaha FZ15",
 };
 
 export const PRODUTO = {
-  nome: "DEX Tank — Adaptador de Bocal de Tanque para Yamaha FZ15",
+  nome: "Dex Tank — Adaptador de Bocal de Tanque para Yamaha FZ15",
   precoAncora: "R$ 197,90",
   preco: "R$ 127,90",
   precoNumero: 127.9,
@@ -33,8 +33,8 @@ export const EMPRESA = {
 
 export const FAQ = [
   {
-    q: "O DEX Tank é compatível com todos os anos da Yamaha FZ15?",
-    a: "Sim. O DEX Tank é o adaptador de bocal de tanque para Yamaha FZ15 compatível com Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026. Se a sua moto for de ano anterior a 2022, fale com o nosso SAC antes de comprar para confirmarmos a compatibilidade.",
+    q: "O Dex Tank é compatível com todos os anos da Yamaha FZ15?",
+    a: "Sim. O Dex Tank é o adaptador de bocal de tanque para Yamaha FZ15 compatível com Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026. Se a sua moto for de ano anterior a 2022, fale com o nosso SAC antes de comprar para confirmarmos a compatibilidade.",
   },
   {
     q: "Preciso de mecânico para instalar?",
@@ -42,7 +42,7 @@ export const FAQ = [
   },
   {
     q: "Qual é o material? Resiste a combustível?",
-    a: "O DEX Tank é produzido em polímero de engenharia de alta resistência, desenvolvido para contato permanente com gasolina e etanol, com tratamento contra raios UV. Ele não resseca, não trinca e não deforma com o calor do motor ou com o uso diário.",
+    a: "O Dex Tank é produzido em polímero de engenharia de alta resistência, desenvolvido para contato permanente com gasolina e etanol, com tratamento contra raios UV. Ele não resseca, não trinca e não deforma com o calor do motor ou com o uso diário.",
   },
   {
     q: "Por que dizem que é o único do mercado?",
@@ -54,7 +54,7 @@ export const FAQ = [
   },
   {
     q: "Tem risco de vazamento ou de entrar sujeira?",
-    a: "Não. A vedação do tanque continua sendo feita pelo bocal original. O DEX Tank é a peça articulada que dispensa a remoção da tampa na hora de abastecer, mantendo o tanque fechado e protegido.",
+    a: "Não. A vedação do tanque continua sendo feita pelo bocal original. O Dex Tank é a peça articulada que dispensa a remoção da tampa na hora de abastecer, mantendo o tanque fechado e protegido.",
   },
   {
     q: "Quais são as formas de pagamento?",
