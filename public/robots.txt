@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://fuel-cap-fixer.lovable.app/dextank/sitemap.xml
+Sitemap: /sitemap.xml
