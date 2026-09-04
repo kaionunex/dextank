@@ -39,7 +39,7 @@ export function Offer() {
             <div className="mt-5 rounded-xl border border-destructive/40 bg-destructive/10 p-4">
               <p className="text-sm text-muted-foreground">
                 De{" "}
-                <span className="text-xl font-semibold text-destructive line-through decoration-destructive decoration-2">
+                <span className="text-xl font-semibold text-destructive strike-diagonal">
                   {PRODUTO.precoAncora}
                 </span>{" "}
                 por apenas

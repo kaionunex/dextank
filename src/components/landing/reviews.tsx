@@ -430,10 +430,10 @@ export function Reviews() {
             <button
               type="button"
               onClick={() => setVisiveis((v) => Math.min(v + PASSO, depoimentos.length))}
-              className="inline-flex items-center gap-2 rounded-lg border border-primary/50 bg-primary/10 px-6 py-3 font-display text-sm uppercase tracking-wide text-primary transition-colors hover:bg-primary/20"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted/80"
             >
               <ChevronDown className="h-4 w-4" aria-hidden="true" />
-              Ver mais avaliações ({restantes})
+              Ver mais
             </button>
           </div>
         ) : null}

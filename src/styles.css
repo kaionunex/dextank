@@ -137,3 +137,40 @@
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
 }
+
+/* Tachado fino e inclinado (de baixo para cima) para preços riscados */
+@utility strike-diagonal {
+  position: relative;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    left: -0.1em;
+    right: -0.1em;
+    top: 50%;
+    height: 1px;
+    background: currentColor;
+    transform: translateY(-50%) rotate(-16deg);
+    clip-path: inset(25% 0 25% 0);
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+}
+
+@utility strike-diagonal-destructive {
+  position: relative;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    left: -0.1em;
+    right: -0.1em;
+    top: 50%;
+    height: 1px;
+    background: var(--color-destructive);
+    transform: translateY(-50%) rotate(-16deg);
+    clip-path: inset(25% 0 25% 0);
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+}

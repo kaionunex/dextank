@@ -124,7 +124,7 @@ export function StickyBuy() {
           <p className="text-[10px] font-semibold uppercase tracking-wide text-destructive">
             Oferta de lançamento
           </p>
-          <p className="text-xs text-muted-foreground line-through decoration-destructive decoration-2">
+          <p className="text-xs text-muted-foreground strike-diagonal-destructive">
             {PRODUTO.precoAncora}
           </p>
           <p className="font-display text-xl text-foreground">{PRODUTO.preco}</p>
