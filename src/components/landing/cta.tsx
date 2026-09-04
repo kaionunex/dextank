@@ -42,10 +42,33 @@ export function CtaButton({
   );
 }
 
+const COUNTDOWN_KEY = "dextank_offer_deadline";
+const CYCLE_MS = 14 * 60 * 1000;
+const RESTART_AFTER_MS = 60 * 60 * 1000;
+
+function readDeadline(): number {
+  try {
+    const now = Date.now();
+    const stored = Number(localStorage.getItem(COUNTDOWN_KEY));
+    let deadline = stored;
+    if (!Number.isFinite(stored) || stored <= 0 || now > stored + RESTART_AFTER_MS) {
+      deadline = now + CYCLE_MS;
+      localStorage.setItem(COUNTDOWN_KEY, String(deadline));
+    }
+    return deadline;
+  } catch {
+    return Date.now() + CYCLE_MS;
+  }
+}
+
 export function useCountdown(minutes = 14) {
   const [left, setLeft] = useState(minutes * 60);
   useEffect(() => {
-    const t = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
+    const deadline = readDeadline();
+    const tick = () =>
+      setLeft(Math.max(0, Math.floor((deadline - Date.now()) / 1000)));
+    tick();
+    const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, []);
   const mm = String(Math.floor(left / 60)).padStart(2, "0");
