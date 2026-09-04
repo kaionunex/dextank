@@ -4,11 +4,11 @@ import { PolicyPage } from "@/components/landing/policy-page";
 export const Route = createFileRoute("/politica-de-privacidade")({
   head: () => ({
     meta: [
-      { title: "Política de Privacidade | Adaptador de Bocal FZ15" },
+      { title: "Política de Privacidade | DEX Tank" },
       {
         name: "description",
         content:
-          "Saiba como a Inter Commerce Brasil coleta, usa e protege os seus dados pessoais nesta loja.",
+          "Saiba como a Inter Commerce Group coleta, usa e protege os seus dados pessoais nesta loja.",
       },
       { property: "og:title", content: "Política de Privacidade" },
       { property: "og:description", content: "Como tratamos e protegemos os seus dados pessoais." },

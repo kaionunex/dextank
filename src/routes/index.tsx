@@ -30,9 +30,10 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: PRODUTO.nome,
+          name: "DEX Tank - Adaptador de Bocal de Tanque para Yamaha FZ15",
           description: DESCRICAO,
-          brand: { "@type": "Brand", name: "Inter Commerce Brasil" },
+          brand: { "@type": "Brand", name: "DEX" },
+          manufacturer: { "@type": "Organization", name: EMPRESA.razaoSocial },
           offers: {
             "@type": "Offer",
             price: PRODUTO.precoNumero,
@@ -44,6 +45,18 @@ export const Route = createFileRoute("/")({
             ratingValue: PRODUTO.nota,
             reviewCount: PRODUTO.avaliacoes,
           },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
         }),
       },
     ],

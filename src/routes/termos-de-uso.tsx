@@ -4,10 +4,11 @@ import { PolicyPage } from "@/components/landing/policy-page";
 export const Route = createFileRoute("/termos-de-uso")({
   head: () => ({
     meta: [
-      { title: "Termos de Uso | Adaptador de Bocal FZ15" },
+      { title: "Termos de Uso | DEX Tank" },
       {
         name: "description",
-        content: "Condições de uso do site e de compra do adaptador articulado de bocal para FZ15.",
+        content:
+          "Condições de uso do site e de compra do DEX Tank, adaptador de bocal de tanque para Yamaha FZ15.",
       },
       { property: "og:title", content: "Termos de Uso" },
       { property: "og:description", content: "Condições de uso do site e de compra." },
@@ -43,7 +44,7 @@ function Page() {
         },
         {
           h: "Propriedade intelectual",
-          p: "Textos, imagens e demais conteúdos deste site pertencem à Inter Commerce Brasil LTDA e não podem ser reproduzidos sem autorização.",
+          p: "Textos, imagens e demais conteúdos deste site pertencem à Inter Commerce Group LTDA e não podem ser reproduzidos sem autorização.",
         },
       ]}
     />

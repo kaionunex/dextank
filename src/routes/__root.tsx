@@ -77,8 +77,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "Inter Commerce Brasil LTDA" },
-      { property: "og:site_name", content: "Bocal Articulado FZ15" },
+      { name: "author", content: "Inter Commerce Group LTDA" },
+      { property: "og:site_name", content: "DEX Tank" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
     ],
@@ -104,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
