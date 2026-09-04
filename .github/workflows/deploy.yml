@@ -24,6 +24,9 @@ jobs:
       - name: Gerar build
         run: npm run build
 
+      - name: Conferir arquivos gerados no build
+        run: ls -la dist/
+
       - name: Enviar para a Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -31,4 +34,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: dextank/
+          server-dir: ./dextank/
+          dangerous-clean-slate: false
