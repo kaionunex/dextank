@@ -12,8 +12,7 @@ export function Hero() {
             Oferta de lançamento
           </span>
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
-            <Globe className="h-4 w-4" aria-hidden="true" /> O único do mercado projetado
-            exclusivamente para a Yamaha FZ15
+            <Globe className="h-4 w-4" aria-hidden="true" /> O ÚNICO DO MERCADO PARA A YAMAHA FZ15
           </span>
 
 
