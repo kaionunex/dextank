@@ -1,0 +1,24 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /dextank/
+
+# Serve arquivos e diretorios existentes normalmente
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /rota -> /rota/index.html (paginas pre-renderizadas)
+RewriteCond %{DOCUMENT_ROOT}/dextank/$1/index.html -f
+RewriteRule ^(.*?)/?$ $1/index.html [L]
+
+# Fallback SPA
+RewriteRule ^ index.html [L]
+
+# Cache de assets com hash
+<IfModule mod_expires.c>
+  ExpiresActive On
+  <FilesMatch "\.(js|css|jpg|jpeg|png|webp|svg|woff2?)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
