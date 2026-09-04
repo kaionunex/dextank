@@ -158,6 +158,26 @@
   }
 }
 
+/* Variante da oferta principal: linha 2px mais alta */
+@utility strike-diagonal-offer {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: calc(56% - 2px);
+    height: 2px;
+    background: currentColor;
+    transform: translateY(-50%) rotate(-4deg);
+    transform-origin: center;
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+}
+
 @utility strike-diagonal-destructive {
   position: relative;
   display: inline-block;
