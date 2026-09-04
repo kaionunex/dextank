@@ -20,7 +20,7 @@ jobs:
           node-version: 22
 
       - name: Instalar dependencias
-        run: npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       - name: Gerar build
         run: npm run build
