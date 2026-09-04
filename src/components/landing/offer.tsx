@@ -4,16 +4,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CreditCard, Lock, ShieldCheck, Truck } from "lucide-react";
+import { CreditCard, Flame, Lock, ShieldCheck, Timer, Truck } from "lucide-react";
 import produto from "@/assets/produto-isolado.png";
-import { CtaButton } from "./cta";
+import { CtaButton, useCountdown } from "./cta";
 import { FAQ, PRODUTO } from "@/lib/landing";
 
 export function Offer() {
+  const time = useCountdown();
+  const pct = Math.round((PRODUTO.estoqueLote / PRODUTO.estoqueTotal) * 100);
   return (
     <section className="border-b border-border py-14" id="oferta">
       <div className="mx-auto max-w-4xl px-4">
-        <div className="grid gap-8 rounded-2xl border border-primary/40 bg-surface p-6 sm:p-8 md:grid-cols-2 md:items-center">
+        <div className="relative grid gap-8 rounded-2xl border border-primary/40 bg-surface p-6 sm:p-8 md:grid-cols-2 md:items-center">
+          <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground shadow-lg">
+            <Flame className="h-3.5 w-3.5" aria-hidden="true" /> Oferta de lançamento
+          </span>
           <img
             src={produto}
             alt="Adaptador de bocal para o tanque de combustível da Yamaha FZ15 DEX Tank visto de frente"
@@ -31,15 +36,42 @@ export function Offer() {
               Fazer FZ15 2022, 2023, 2024, 2025 e 2026.
             </p>
 
-            <p className="mt-5 text-sm text-muted-foreground line-through">{PRODUTO.precoAncora}</p>
-            <p className="font-display text-5xl text-primary">{PRODUTO.preco}</p>
-            <p className="mt-1 text-sm text-foreground">
-              ou <strong>{PRODUTO.precoPix}</strong> no Pix (10% de desconto)
-            </p>
-            <p className="text-sm text-muted-foreground">
-              em até <strong className="text-foreground">{PRODUTO.parcelas}</strong> no cartão de
-              crédito
-            </p>
+            <div className="mt-5 rounded-xl border border-destructive/40 bg-destructive/10 p-4">
+              <p className="text-sm text-muted-foreground">
+                De{" "}
+                <span className="font-semibold text-destructive line-through decoration-destructive decoration-2">
+                  {PRODUTO.precoAncora}
+                </span>{" "}
+                por apenas
+              </p>
+              <p className="font-display text-5xl text-primary">{PRODUTO.preco}</p>
+              <p className="mt-1 text-sm text-foreground">
+                ou <strong>{PRODUTO.precoPix}</strong> no Pix (10% de desconto)
+              </p>
+              <p className="text-sm text-muted-foreground">
+                em até <strong className="text-foreground">{PRODUTO.parcelas}</strong> no cartão de
+                crédito
+              </p>
+              <p className="mt-2 inline-flex items-center gap-1.5 rounded bg-success/15 px-2 py-1 text-xs font-semibold text-success">
+                Você economiza {PRODUTO.economia} — só no lote de lançamento
+              </p>
+              <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
+                <Timer className="h-4 w-4" aria-hidden="true" /> A oferta expira em{" "}
+                <span className="tabular-nums">{time}</span>
+              </p>
+              <div className="mt-3">
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>
+                    Restam <strong className="text-foreground">{PRODUTO.estoqueLote}</strong>{" "}
+                    unidades do lote
+                  </span>
+                  <span className="tabular-nums">{pct}% restante</span>
+                </div>
+                <div className="mt-1 h-2 overflow-hidden rounded bg-muted">
+                  <div className="h-full bg-destructive" style={{ width: `${pct}%` }} />
+                </div>
+              </div>
+            </div>
 
             <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
