@@ -7,10 +7,10 @@ Em `src/components/landing/footer.tsx`, o grid passa de `sm:grid-cols-2` para `s
 - **Coluna 1 (atual):** logo + dados da empresa (razão social, CNPJ, endereço, horário).
 - **Coluna 2 (atual):** menu de políticas.
 - **Coluna 3 (nova) — "Central de Atendimento":**
-  - Telefone (11) 4003-1000 com ícone do WhatsApp (lucide `MessageCircle` é o ícone genérico; para o glyph oficial do WhatsApp uso um SVG inline pequeno, sem escrever "é WhatsApp").
+  - Telefone (11) 4003-1000 com ícone do WhatsApp, linkado para `https://wa.me/551140031000`.
   - E-mail sac@tendense.com.br com ícone de envelope, link `mailto:`.
   - Texto curto: "Tire suas dúvidas antes de comprar — resposta rápida em horário comercial."
-  - Telefone clicável (`tel:` e/ou link wa.me com o número? — ver pergunta abaixo).
+
 
 ## 2. Favicon
 
