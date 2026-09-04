@@ -69,8 +69,8 @@ export function Footer() {
               {EMPRESA.email}
             </a>
             <p className="mt-1 text-xs leading-relaxed">
-              Precisa de ajuda? Entre em contato conosco — atendimento de segunda a sexta, das 9h
-              às 18h.
+              Atendimento automático 24 horas, todos os dias — chame a qualquer momento e receba
+              resposta na hora.
             </p>
           </div>
         </div>
@@ -79,7 +79,8 @@ export function Footer() {
         <div className="space-y-2 border-t border-border pt-6 text-xs leading-relaxed">
           <p>
             <strong className="text-foreground">Aviso de marca:</strong> o DEX Tank é um acessório de
-            reposição desenvolvido e fabricado sob encomenda da marca DEX, comercializada por{" "}
+            <strong className="text-foreground">Aviso de marca:</strong> o DEX Tank é um acessório
+            desenvolvido e fabricado sob encomenda da marca DEX, comercializada por{" "}
             {EMPRESA.razaoSocial}. Não é um produto original Yamaha e não possui qualquer vínculo,
             afiliação, patrocínio ou endosso da Yamaha Motor. As marcas “Yamaha” e “FZ15” são de seus
             respectivos titulares e são citadas exclusivamente para indicar a compatibilidade do

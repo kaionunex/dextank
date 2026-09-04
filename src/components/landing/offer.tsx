@@ -13,7 +13,7 @@ export function Offer() {
   const time = useCountdown();
   const pct = Math.round((PRODUTO.estoqueLote / PRODUTO.estoqueTotal) * 100);
   return (
-    <section className="border-b border-border py-14" id="oferta">
+    <section className="scroll-mt-4 border-b border-border py-14" id="oferta">
       <div className="mx-auto max-w-4xl px-4">
         <div className="relative grid gap-8 rounded-2xl border border-primary/40 bg-surface p-6 sm:p-8 md:grid-cols-2 md:items-center">
           <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground shadow-lg">
@@ -39,7 +39,7 @@ export function Offer() {
             <div className="mt-5 rounded-xl border border-destructive/40 bg-destructive/10 p-4">
               <p className="text-sm text-muted-foreground">
                 De{" "}
-                <span className="text-xl font-semibold text-destructive line-through decoration-destructive decoration-2">
+                <span className="font-semibold text-destructive line-through decoration-destructive decoration-2">
                   {PRODUTO.precoAncora}
                 </span>{" "}
                 por apenas
@@ -152,7 +152,7 @@ export function FinalCta() {
           enquanto a oferta está no ar.
         </p>
         <div className="mx-auto mt-6 max-w-md">
-          <CtaButton />
+          <CtaButton href="#oferta" />
           <p className="mt-2 text-xs text-muted-foreground">
             {PRODUTO.preco} • {PRODUTO.precoPix} no Pix • {PRODUTO.parcelas}
           </p>
