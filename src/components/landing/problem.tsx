@@ -8,7 +8,7 @@ export function BeforeAfter() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
-            DEX Tank Yamaha FZ15
+            DEX TANK YAMAHA FZ15
           </p>
           <h2 className="mt-2 font-display text-3xl text-foreground sm:text-4xl">
             Transforme seu abastecimento
@@ -173,7 +173,7 @@ export function Exclusivity() {
           O único adaptador de bocal para o tanque de combustível da Yamaha FZ15
         </h2>
         <p className="mt-4 text-muted-foreground">
-          O DEX Tank não é revenda de peça genérica: o projeto nasceu aqui, foi desenhado
+          O Dex Tank não é revenda de peça genérica: o projeto nasceu aqui, foi desenhado
           especificamente para o bocal da Yamaha FZ15 e é produzido pela nossa própria operação.
           Você não vai encontrar esse produto em nenhum outro fornecedor do mundo — nem original,
           nem paralelo.
