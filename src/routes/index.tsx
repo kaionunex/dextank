@@ -9,7 +9,7 @@ import { Offer, Guarantee, Faq, FinalCta } from "@/components/landing/offer";
 import { Footer } from "@/components/landing/footer";
 import { EMPRESA, FAQ, PRODUTO } from "@/lib/landing";
 
-const TITULO = "DEX Tank: Adaptador de Bocal de Tanque para Yamaha FZ15 | DEX";
+const TITULO = "DEX Tank: Adaptador de Bocal de Tanque para Yamaha FZ15 | Compra Segura";
 const DESCRICAO =
   "Conheça o DEX Tank, o único adaptador de bocal para tanque de combustível da Yamaha FZ15 (2022 a 2026). Projeto exclusivo, encaixe sob medida e envio imediato.";
 
