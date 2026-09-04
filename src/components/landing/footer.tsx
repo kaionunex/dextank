@@ -50,10 +50,8 @@ export function Footer() {
             produto.
           </p>
           <p>
-            <strong className="text-foreground">Imagens e depoimentos:</strong> as imagens deste site
-            são meramente ilustrativas e podem não representar exatamente o produto recebido.
-            Depoimentos e avaliações são ilustrativos e refletem experiências individuais; resultados
-            podem variar de acordo com o modelo, o ano e a condição da motocicleta.
+            <strong className="text-foreground">Imagens:</strong> as imagens deste site são meramente
+            ilustrativas e podem não representar exatamente o produto recebido.
           </p>
           <p>
             <strong className="text-foreground">Oferta:</strong> preços, condições de pagamento,

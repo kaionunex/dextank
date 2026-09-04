@@ -145,9 +145,6 @@ export function Reviews() {
           ))}
         </div>
 
-        <p className="mt-4 text-center text-xs text-muted-foreground">
-          Depoimentos e imagens ilustrativos de clientes. Resultados e experiências podem variar.
-        </p>
       </div>
     </section>
   );
