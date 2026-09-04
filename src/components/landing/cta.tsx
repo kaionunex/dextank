@@ -20,14 +20,16 @@ export function CtaButton({
   children = "QUERO O MEU AGORA",
   className,
   size = "lg",
+  href = CHECKOUT_URL,
 }: {
   children?: React.ReactNode;
   className?: string;
   size?: "lg" | "sm";
+  href?: string;
 }) {
   return (
     <a
-      href={CHECKOUT_URL}
+      href={href}
       className={cn(
         "group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary font-display uppercase tracking-wide text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02] active:scale-[0.99]",
         size === "lg" ? "px-6 py-4 text-lg sm:text-xl" : "px-4 py-3 text-base",

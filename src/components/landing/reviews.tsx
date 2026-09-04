@@ -88,7 +88,7 @@ function Stars({ n }: { n: number }) {
 
 export function Reviews() {
   return (
-    <section className="border-b border-border py-14" id="avaliacoes">
+    <section className="scroll-mt-4 border-b border-border py-14" id="avaliacoes">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
           Quem já instalou <span className="text-primary">aprova</span>
