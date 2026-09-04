@@ -25,17 +25,11 @@ jobs:
       - name: Gerar build
         run: npm run build
 
-      - name: Conferir arquivos gerados no build
+      - name: Enviar arquivos via LFTP
         run: |
-          echo "Conteudo da pasta dist:"
-          ls -la dist/
-
-      - name: Enviar para a Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
-          server-dir: dextank/
-          dangerous-clean-slate: true
+          sudo apt-get update && sudo apt-get install -y lftp
+          lftp -c "
+            set ftp:ssl-allow no;
+            open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }};
+            mirror -R dist/ dextank/ --parallel=5 --verbose;
+          "
