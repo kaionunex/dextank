@@ -6,53 +6,97 @@ export function BeforeAfter() {
   return (
     <section className="border-b border-border py-14" id="antes-depois">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
-          A diferença aparece <span className="text-primary">no primeiro posto</span>
-        </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-          Todo mundo que anda de FZ15 conhece a cena: chave na mão, tampa solta, fila atrás.
-        </p>
+        <div className="text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
+            DEX Tank Yamaha FZ15
+          </p>
+          <h2 className="mt-2 font-display text-3xl text-foreground sm:text-4xl">
+            Transforme seu abastecimento
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+            Todo mundo que anda de FZ15 conhece a cena: chave na mão, tampa solta, fila atrás.
+          </p>
+        </div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          <article className="overflow-hidden rounded-xl border border-destructive/40 bg-surface">
-            <div className="flex items-center gap-2 bg-destructive/15 px-4 py-2">
-              <X className="h-4 w-4 text-destructive" aria-hidden="true" />
-              <span className="font-display text-sm text-destructive">Antes</span>
-            </div>
-            <img
-              src={antes}
-              alt="Motociclista removendo com a chave o bocal original do tanque para abastecer"
-              width={912}
-              height={912}
-              loading="lazy"
-              className="aspect-square w-full object-cover"
-            />
-            <ul className="space-y-2 px-4 py-4 text-sm text-muted-foreground">
-              <li>Precisa da chave toda vez que for abastecer</li>
-              <li>Tampa apoiada no tanque, arranhando a pintura</li>
-              <li>Risco de esquecer ou derrubar o bocal no posto</li>
-            </ul>
-          </article>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {/* BEFORE */}
+          <div className="group relative">
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-b from-destructive/20 to-transparent blur-lg opacity-50 transition duration-500 group-hover:opacity-100" />
+            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface">
+              <div className="relative aspect-square w-full overflow-hidden">
+                <img
+                  src={antes}
+                  alt="Motociclista removendo com a chave o bocal original do tanque para abastecer"
+                  width={912}
+                  height={912}
+                  loading="lazy"
+                  className="h-full w-full object-cover grayscale opacity-70 transition duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-destructive px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-destructive-foreground shadow-lg ring-1 ring-white/20">
+                    <X className="h-3 w-3" aria-hidden="true" /> Antes
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col p-6 sm:p-8">
+                <h3 className="font-display text-lg text-destructive sm:text-xl">Dificuldade e riscos</h3>
+                <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2.5">
+                    <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden="true" />
+                    <span>Precisa da chave toda vez que for abastecer</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden="true" />
+                    <span>Tampa apoiada no tanque, arranhando a pintura</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden="true" />
+                    <span>Risco de esquecer ou derrubar o bocal no posto</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
 
-          <article className="overflow-hidden rounded-xl border border-success/40 bg-surface">
-            <div className="flex items-center gap-2 bg-success/15 px-4 py-2">
-              <Check className="h-4 w-4 text-success" aria-hidden="true" />
-              <span className="font-display text-sm text-success">Depois</span>
-            </div>
-            <img
-              src={depois}
-              alt="Bico de combustível abastecendo a moto com o adaptador articulado aberto para o lado"
-              width={912}
-              height={912}
-              loading="lazy"
-              className="aspect-square w-full object-cover"
-            />
-            <ul className="space-y-2 px-4 py-4 text-sm text-muted-foreground">
-              <li>Abre para o lado e fica preso na moto</li>
-              <li>Tanque protegido, acabamento original preservado</li>
-              <li>Abasteceu, fechou e seguiu viagem</li>
-            </ul>
-          </article>
+          {/* AFTER */}
+          <div className="group relative">
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-b from-primary/40 to-primary/0 blur-xl opacity-60 transition duration-500 group-hover:opacity-100" />
+            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-primary/20 bg-surface shadow-2xl shadow-black">
+              <div className="relative aspect-square w-full overflow-hidden">
+                <img
+                  src={depois}
+                  alt="Bico de combustível abastecendo a moto com o adaptador articulado aberto para o lado"
+                  width={912}
+                  height={912}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-success px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-success-foreground shadow-lg ring-1 ring-white/20">
+                    <Check className="h-3 w-3" aria-hidden="true" /> Depois
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col p-6 sm:p-8">
+                <h3 className="font-display text-lg text-success sm:text-xl">Tecnologia e praticidade</h3>
+                <ul className="mt-4 space-y-3 text-sm text-foreground">
+                  <li className="flex items-start gap-2.5 font-medium">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden="true" />
+                    <span>Abre para o lado e fica preso na moto</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 font-medium">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden="true" />
+                    <span>Tanque protegido, acabamento original preservado</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 font-medium">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden="true" />
+                    <span>Abasteceu, fechou e seguiu viagem</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
