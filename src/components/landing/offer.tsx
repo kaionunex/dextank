@@ -7,7 +7,7 @@ import {
 import { CreditCard, Lock, ShieldCheck, Truck } from "lucide-react";
 import produto from "@/assets/produto-isolado.png";
 import { CtaButton } from "./cta";
-import { PRODUTO } from "@/lib/landing";
+import { FAQ, PRODUTO } from "@/lib/landing";
 
 export function Offer() {
   return (
@@ -16,7 +16,7 @@ export function Offer() {
         <div className="grid gap-8 rounded-2xl border border-primary/40 bg-surface p-6 sm:p-8 md:grid-cols-2 md:items-center">
           <img
             src={produto}
-            alt="Adaptador articulado do bocal do tanque para Yamaha FZ15 visto de frente"
+            alt="Adaptador de bocal para o tanque de combustível da Yamaha FZ15 DEX Tank visto de frente"
             width={1024}
             height={1024}
             loading="lazy"
@@ -24,10 +24,11 @@ export function Offer() {
           />
           <div>
             <h2 className="font-display text-2xl text-foreground sm:text-3xl">
-              Adaptador Articulado do Bocal — FZ15
+              DEX Tank — Adaptador Articulado do Bocal
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              1 unidade + adaptador de acabamento + instruções de instalação.
+              1 unidade + adaptador de acabamento + instruções de instalação. Compatível com Yamaha
+              Fazer FZ15 2022, 2023, 2024, 2025 e 2026.
             </p>
 
             <p className="mt-5 text-sm text-muted-foreground line-through">{PRODUTO.precoAncora}</p>
@@ -87,50 +88,15 @@ export function Guarantee() {
   );
 }
 
-const faq = [
-  [
-    "Serve na minha FZ15?",
-    "O adaptador foi desenvolvido para todos os modelos novos da Yamaha FZ15 a partir de 2022. Se a sua moto for de ano anterior, fale com o nosso SAC antes de comprar.",
-  ],
-  [
-    "Preciso de mecânico para instalar?",
-    "Não. A instalação é feita em poucos minutos com a própria chave da moto, seguindo o passo a passo que acompanha o produto.",
-  ],
-  [
-    "Ele danifica o tanque?",
-    "Não. O adaptador apenas se encaixa sobre o bocal original, sem furos e sem cortes. A instalação é totalmente reversível.",
-  ],
-  [
-    "Tem risco de vazamento ou de entrar sujeira?",
-    "Não. O bocal original continua sendo o elemento de vedação do tanque. O adaptador é a peça articulada que dispensa a remoção da tampa.",
-  ],
-  [
-    "O tanque continua trancado?",
-    "Sim. O sistema de travamento por chave do bocal original é mantido.",
-  ],
-  [
-    "Quais são as formas de pagamento?",
-    "Pix com 10% de desconto, cartão de crédito em até 12x e boleto. Tudo processado em ambiente seguro no checkout.",
-  ],
-  [
-    "Como funciona o frete?",
-    "Frete grátis para todo o Brasil nesta oferta. Se preferir receber mais rápido, opções de envio expresso ficam disponíveis no checkout.",
-  ],
-  [
-    "E se eu não gostar?",
-    "Você tem 90 dias de garantia contra defeitos de fabricação, além dos 7 dias de arrependimento previstos no Código de Defesa do Consumidor.",
-  ],
-] as const;
-
 export function Faq() {
   return (
     <section className="border-b border-border py-14" id="faq">
       <div className="mx-auto max-w-3xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
-          Perguntas frequentes
+          Perguntas frequentes sobre o adaptador de bocal FZ15
         </h2>
         <Accordion type="single" collapsible className="mt-6">
-          {faq.map(([q, a]) => (
+          {FAQ.map(({ q, a }) => (
             <AccordionItem key={q} value={q}>
               <AccordionTrigger className="text-left text-base">{q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">{a}</AccordionContent>
@@ -150,8 +116,8 @@ export function FinalCta() {
           Sua FZ15 merece essa <span className="text-primary">praticidade</span>
         </h2>
         <p className="mt-3 text-muted-foreground">
-          Produção própria e estoque limitado por lote. Garanta o seu com frete grátis enquanto a
-          oferta está no ar.
+          Produção própria e estoque limitado por lote. Garanta o seu DEX Tank com frete grátis
+          enquanto a oferta está no ar.
         </p>
         <div className="mx-auto mt-6 max-w-md">
           <CtaButton />
