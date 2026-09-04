@@ -151,7 +151,7 @@
     top: 56%;
     height: 2px;
     background: currentColor;
-    transform: translateY(-50%) rotate(-7deg);
+    transform: translateY(-50%) rotate(-4deg);
     transform-origin: center;
     border-radius: 9999px;
     pointer-events: none;
@@ -170,7 +170,7 @@
     top: 56%;
     height: 2px;
     background: var(--color-destructive);
-    transform: translateY(-50%) rotate(-7deg);
+    transform: translateY(-50%) rotate(-4deg);
     transform-origin: center;
     border-radius: 9999px;
     pointer-events: none;
