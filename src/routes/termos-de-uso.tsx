@@ -4,11 +4,11 @@ import { PolicyPage } from "@/components/landing/policy-page";
 export const Route = createFileRoute("/termos-de-uso")({
   head: () => ({
     meta: [
-      { title: "Termos de Uso | DEX Tank" },
+      { title: "Termos de Uso | Dex Tank" },
       {
         name: "description",
         content:
-          "Condições de uso do site e de compra do DEX Tank, adaptador de bocal de tanque para Yamaha FZ15.",
+          "Condições de uso do site e de compra do Dex Tank, adaptador de bocal de tanque para Yamaha FZ15.",
       },
       { property: "og:title", content: "Termos de Uso" },
       { property: "og:description", content: "Condições de uso do site e de compra." },
@@ -32,7 +32,7 @@ function Page() {
         },
         {
           h: "Produto e compatibilidade",
-          p: "O DEX Tank é um acessório de reposição desenvolvido e fabricado sob encomenda da marca DEX, sem qualquer vínculo, afiliação ou endosso da Yamaha Motor. A marca é citada apenas para indicar compatibilidade com os modelos Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026. Verifique a compatibilidade antes da compra.",
+          p: "O Dex Tank é um acessório de reposição desenvolvido e fabricado sob encomenda da marca Dex, sem qualquer vínculo, afiliação ou endosso da Yamaha Motor. A marca é citada apenas para indicar compatibilidade com os modelos Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026. Verifique a compatibilidade antes da compra.",
         },
         {
           h: "Instalação e uso",

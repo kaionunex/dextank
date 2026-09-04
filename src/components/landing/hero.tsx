@@ -15,14 +15,13 @@ export function Hero() {
             <Globe className="h-4 w-4" aria-hidden="true" /> O ÚNICO NO MERCADO PARA YAMAHA FZ 15
           </div>
 
-
           <h1 className="mt-4 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
-            DEX Tank: <span className="text-primary">adaptador de bocal de tanque</span> para Yamaha
+            Dex Tank: <span className="text-primary">adaptador de bocal de tanque</span> para Yamaha
             FZ15
           </h1>
 
           <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            Abasteça sem tirar a tampa: o DEX Tank transforma o bocal da sua FZ15 em um sistema que
+            Abasteça sem tirar a tampa: o Dex Tank transforma o bocal da sua FZ15 em um sistema que
             abre para o lado. Sem chave na mão, sem tampa apoiada no tanque, sem risco de arranhar a
             pintura.
           </p>
@@ -54,7 +53,7 @@ export function Hero() {
         <div className="relative">
           <img
             src={heroImg}
-            alt="Adaptador de bocal de tanque DEX Tank instalado e aberto no tanque de uma Yamaha FZ15"
+            alt="Adaptador de bocal de tanque Dex Tank instalado e aberto no tanque de uma Yamaha FZ15"
             width={1408}
             height={1056}
             className="w-full rounded-xl border border-border object-cover shadow-2xl"

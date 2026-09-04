@@ -7,7 +7,7 @@ export function BrandLogo({ className }: { className?: string }) {
   return (
     <div className={cn("leading-none", className)}>
       <p className="font-display text-2xl uppercase tracking-wide text-foreground">
-        DEX <span className="text-primary">Tank</span>
+        Dex <span className="text-primary">Tank</span>
       </p>
       <p className="mt-0.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
         {MARCA.subtitulo}
@@ -65,8 +65,7 @@ export function useCountdown(minutes = 14) {
   const [left, setLeft] = useState(minutes * 60);
   useEffect(() => {
     const deadline = readDeadline();
-    const tick = () =>
-      setLeft(Math.max(0, Math.floor((deadline - Date.now()) / 1000)));
+    const tick = () => setLeft(Math.max(0, Math.floor((deadline - Date.now()) / 1000)));
     tick();
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);

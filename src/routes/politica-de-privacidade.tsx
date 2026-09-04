@@ -4,7 +4,7 @@ import { PolicyPage } from "@/components/landing/policy-page";
 export const Route = createFileRoute("/politica-de-privacidade")({
   head: () => ({
     meta: [
-      { title: "Política de Privacidade | DEX Tank" },
+      { title: "Política de Privacidade | Dex Tank" },
       {
         name: "description",
         content:

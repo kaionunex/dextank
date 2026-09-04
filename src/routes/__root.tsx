@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Inter Commerce Group LTDA" },
-      { property: "og:site_name", content: "DEX Tank" },
+      { property: "og:site_name", content: "Dex Tank" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
     ],
