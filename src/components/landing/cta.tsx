@@ -89,7 +89,7 @@ export function TopBar() {
           <span className="inline-flex items-center gap-1.5 rounded bg-background px-2 py-0.5 text-xs text-primary shadow-sm tabular-nums ring-1 ring-primary animate-pulse sm:text-sm">
             <span className="hidden sm:inline">Oferta expira em</span>
             <span className="sm:hidden">Expira em</span>
-            <span className="font-semibold tabular-nums">{time}</span>
+            <span className="font-bold tabular-nums">{time}</span>
           </span>
         </div>
       </div>
