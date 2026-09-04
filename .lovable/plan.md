@@ -1,46 +1,37 @@
-# CTAs segmentados por etapa do funil
+# Nova dobra: vídeo da instalação
 
-## Objetivo
-Criar caminhos de CTA distintos para visitantes em diferentes estágios da página: quem ainda não conhece a prova do produto (instalação + depoimentos) e quem já passou por ela e está pronto para comprar.
+## O que será feito
 
-## O que será alterado
+Criar uma seção nova na página dedicada ao vídeo que mostra a remoção do bocal original e a instalação do DEX Tank na FZ15. O vídeo ainda não está disponível, então entra um vídeo temporário (placeholder) no formato vertical/horizontal conforme o material final — fácil de trocar depois, basta substituir um arquivo.
 
-### 1. Hero — CTA primário para quem não conhece
-- Substituir o botão principal do hero para: **"VER COMO FUNCIONA"**.
-- Destino: rolar suavemente até a seção de instalação (`#instalacao`).
-- Manter o texto de apoio abaixo do botão (preço/parcelas).
+## Posição na página (pensando em conversão)
 
-### 2. Após a seção de instalação — CTA para prova social
-- Adicionar um botão ao final da seção `#instalacao` com o texto: **"VER DEPOIMENTOS DE QUEM INSTALOU"**.
-- Destino: rolar suavemente até `#avaliacoes`.
-- Usar estilo secundário (outline) para diferenciar do CTA de compra.
+A dobra entra **logo depois da seção "Instalação em 3 passos" e antes das avaliações**. Motivo: o visitante acabou de ler que a instalação leva 3 passos — o vídeo prova na hora que é verdade, eliminando a última dúvida ("será que eu consigo instalar?") antes de ele chegar nos depoimentos e na oferta.
 
-### 3. Após a seção de avaliações — CTA para oferta
-- Adicionar um botão ao final da seção `#avaliacoes` com o texto: **"GARANTIR MEU DEX TANK"**.
-- Destino: rolar suavemente até `#oferta`.
-- Usar estilo primário (mesmo do CTA de compra).
+```text
+Hero → Antes/Depois → Benefícios → Exclusividade
+     → Instalação em 3 passos → [NOVO: VÍDEO] → Avaliações → Oferta → ...
+```
 
-### 4. Final CTA — manter direcionamento para oferta
-- O botão final "QUERO O MEU AGORA" continua indo para `#oferta`.
+## Estrutura da dobra
 
-### 5. StickyBuy mobile — manter direto para oferta
-- A barra fixa mobile continua com "COMPRAR" indo para `#oferta`.
+- **Título:** "Veja como é fácil instalar" com destaque em laranja
+- **Subtítulo:** texto curto reforçando que é sem ferramenta, sem mecânico, e que o resultado deixa o tanque mais bonito
+- **Vídeo centralizado** com:
+  - Player nativo do navegador (botão de play, sem autoplay com som)
+  - Imagem de capa (poster) enquanto o vídeo não é iniciado — evita tela preta e não pesa o carregamento
+  - Carregamento adiado (lazy) para não atrapalhar a velocidade da página no mobile
+  - Moldura com borda no padrão visual do site
+- **3 selos rápidos abaixo do vídeo:** "Sem ferramentas", "Menos de 2 minutos", "Encaixe perfeito"
+- **CTA ao final da dobra:** botão "QUERO O MEU AGORA" rolando até a oferta — quem assistiu o vídeo está no ponto mais quente de decisão
 
-### 6. Suporte a variantes no CtaButton
-- Adicionar prop `variant?: "primary" | "secondary"` no `CtaButton`.
-- Variante `secondary`: fundo transparente com borda primária e texto primária, mantendo o mesmo comportamento de hover.
+## Como trocar o vídeo depois
 
-## Resultado esperado
-Funil claro na página:
-1. Hero → instalação
-2. Instalação → avaliações
-3. Avaliações → oferta
-4. Oferta → checkout
+O arquivo ficará em `public/videos/instalacao.mp4` com uma imagem de capa em `public/videos/capa-instalacao.jpg`. Para colocar o vídeo real, basta substituir esses dois arquivos (ou me mandar o vídeo que eu mesmo troco).
 
-Isso evita jogar o visitante direto no checkout antes que ele veja a prova do produto, sem perder o CTA de compra para quem já está convencido.
+## Detalhes técnicos
 
-## Arquivos envolvidos
-- `src/components/landing/cta.tsx`
-- `src/components/landing/hero.tsx`
-- `src/components/landing/install.tsx`
-- `src/components/landing/reviews.tsx`
+- Novo componente `src/components/landing/video-install.tsx`, inserido em `src/routes/index.tsx` entre `Install` e `Reviews`
+- Tag `<video controls playsInline preload="none" poster=...>` — sem bibliotecas externas, sem YouTube (evita distração e saída da página)
+- Placeholder: um vídeo curto genérico será incluído apenas para validar o layout; o material real entra depois
+- Verificação com typecheck e teste visual no mobile (390px) via Playwright
