@@ -74,6 +74,7 @@ function Index() {
         <BeforeAfter />
         <Benefits />
         <Exclusivity />
+        <VideoInstall />
         <Install />
         <Reviews />
         <Offer />
