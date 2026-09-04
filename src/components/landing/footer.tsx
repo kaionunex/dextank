@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { BrandLogo } from "./cta";
 import { EMPRESA } from "@/lib/landing";
 
 export function Footer() {
@@ -7,7 +8,11 @@ export function Footer() {
       <div className="mx-auto max-w-5xl space-y-6 px-4 text-sm text-muted-foreground">
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
-            <p className="font-display text-base text-foreground">{EMPRESA.razaoSocial}</p>
+            <BrandLogo />
+            <p className="mt-2">
+              <strong className="text-foreground">DEX</strong> é uma marca comercializada por{" "}
+              {EMPRESA.razaoSocial}.
+            </p>
             <p className="mt-1">CNPJ {EMPRESA.cnpj}</p>
             <p className="mt-1">{EMPRESA.endereco}</p>
             <p className="mt-1">
@@ -37,11 +42,12 @@ export function Footer() {
 
         <div className="space-y-2 border-t border-border pt-6 text-xs leading-relaxed">
           <p>
-            <strong className="text-foreground">Aviso de marca:</strong> este é um acessório de
-            reposição desenvolvido e fabricado por {EMPRESA.razaoSocial}. Não é um produto original
-            Yamaha e não possui qualquer vínculo, afiliação, patrocínio ou endosso da Yamaha Motor.
-            As marcas “Yamaha” e “FZ15” são de seus respectivos titulares e são citadas
-            exclusivamente para indicar a compatibilidade do produto.
+            <strong className="text-foreground">Aviso de marca:</strong> o DEX Tank é um acessório de
+            reposição desenvolvido e fabricado sob encomenda da marca DEX, comercializada por{" "}
+            {EMPRESA.razaoSocial}. Não é um produto original Yamaha e não possui qualquer vínculo,
+            afiliação, patrocínio ou endosso da Yamaha Motor. As marcas “Yamaha” e “FZ15” são de seus
+            respectivos titulares e são citadas exclusivamente para indicar a compatibilidade do
+            produto.
           </p>
           <p>
             <strong className="text-foreground">Imagens e depoimentos:</strong> as imagens deste site

@@ -58,8 +58,8 @@ export function Install() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-xl border border-border bg-surface px-5 py-4 text-center">
           <CheckCircle2 className="h-5 w-5 text-success" aria-hidden="true" />
           <p className="text-sm text-muted-foreground">
-            <strong className="text-foreground">Compatibilidade garantida:</strong> serve em todos os
-            modelos novos da Yamaha FZ15 a partir de 2022.
+            <strong className="text-foreground">Compatibilidade garantida:</strong> compatível com
+            Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026.
           </p>
         </div>
       </div>

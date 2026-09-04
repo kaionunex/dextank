@@ -68,7 +68,8 @@ const beneficios = [
   {
     icon: Puzzle,
     titulo: "Encaixe perfeito",
-    texto: "Projetado nas medidas exatas do tanque da FZ15 a partir de 2022.",
+    texto:
+      "Projetado nas medidas exatas do tanque: compatível com Yamaha Fazer FZ15 2022, 2023, 2024, 2025 e 2026.",
   },
   {
     icon: Timer,
@@ -121,13 +122,13 @@ export function Exclusivity() {
           Não existe igual no mercado
         </p>
         <h2 className="mt-3 font-display text-3xl text-foreground sm:text-4xl">
-          Nós desenvolvemos, nós fabricamos e somos o único fornecedor
+          O único adaptador de bocal para o tanque de combustível da Yamaha FZ15
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Esse adaptador não é revenda de peça genérica: o projeto nasceu aqui, foi desenhado
+          O DEX Tank não é revenda de peça genérica: o projeto nasceu aqui, foi desenhado
           especificamente para o bocal da Yamaha FZ15 e é produzido pela nossa própria operação.
-          Você não vai encontrar esse produto em nenhum outro fornecedor do mundo — nem original, nem
-          paralelo.
+          Você não vai encontrar esse produto em nenhum outro fornecedor do mundo — nem original,
+          nem paralelo.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
