@@ -6,11 +6,11 @@ import { Install } from "@/components/landing/install";
 import { Reviews } from "@/components/landing/reviews";
 import { Offer, Guarantee, Faq, FinalCta } from "@/components/landing/offer";
 import { Footer } from "@/components/landing/footer";
-import { PRODUTO } from "@/lib/landing";
+import { EMPRESA, FAQ, PRODUTO } from "@/lib/landing";
 
-const TITULO = "Bocal Articulado para Yamaha FZ15 | Abasteça sem tirar a tampa";
+const TITULO = "DEX Tank: Adaptador de Bocal de Tanque para Yamaha FZ15 | DEX";
 const DESCRICAO =
-  "Adaptador articulado do bocal do tanque para Yamaha FZ15 2022+. Abasteça sem remover a tampa. R$ 127,90 com frete grátis e 90 dias de garantia.";
+  "Conheça o DEX Tank, o único adaptador de bocal para tanque de combustível da Yamaha FZ15 (2022 a 2026). Projeto exclusivo, encaixe sob medida e envio imediato.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
