@@ -42,7 +42,7 @@ export function CtaButton({
   );
 }
 
-function useCountdown(minutes = 14) {
+export function useCountdown(minutes = 14) {
   const [left, setLeft] = useState(minutes * 60);
   useEffect(() => {
     const t = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
@@ -98,7 +98,12 @@ export function StickyBuy() {
     >
       <div className="flex items-center gap-3 px-4 py-3">
         <div className="leading-tight">
-          <p className="text-xs text-muted-foreground line-through">{PRODUTO.precoAncora}</p>
+          <p className="text-[10px] font-semibold uppercase tracking-wide text-destructive">
+            Oferta de lançamento
+          </p>
+          <p className="text-xs text-muted-foreground line-through decoration-destructive decoration-2">
+            {PRODUTO.precoAncora}
+          </p>
           <p className="font-display text-xl text-foreground">{PRODUTO.preco}</p>
         </div>
         <CtaButton size="sm" className="flex-1">

@@ -8,11 +8,14 @@ export const MARCA = {
 
 export const PRODUTO = {
   nome: "DEX Tank — Adaptador de Bocal de Tanque para Yamaha FZ15",
-  precoAncora: "R$ 197,00",
+  precoAncora: "R$ 227,90",
   preco: "R$ 127,90",
   precoNumero: 127.9,
   precoPix: "R$ 115,11",
   parcelas: "12x de R$ 12,56",
+  economia: "R$ 100,00",
+  estoqueLote: 37,
+  estoqueTotal: 142,
   garantiaDias: 90,
   nota: 4.9,
   avaliacoes: 1287,

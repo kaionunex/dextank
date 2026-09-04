@@ -134,7 +134,7 @@ export function Exclusivity() {
           {[
             ["Projeto próprio", "Desenvolvido e testado na FZ15 real"],
             ["Produção própria", "Controle total de qualidade lote a lote"],
-            ["Fornecedor único", "Estoque limitado por lote de produção"],
+            ["Fornecedor único", "Lote de lançamento com estoque limitado"],
           ].map(([t, s]) => (
             <div key={t} className="rounded-xl border border-border bg-background p-4">
               <p className="font-display text-primary">{t}</p>

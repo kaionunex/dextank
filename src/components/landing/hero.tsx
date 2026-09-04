@@ -8,10 +8,14 @@ export function Hero() {
     <header className="relative overflow-hidden border-b border-border">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:py-16">
         <div>
+          <span className="mb-3 inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground">
+            Oferta de lançamento
+          </span>
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
             <Globe className="h-4 w-4" aria-hidden="true" /> O único do mercado projetado
             exclusivamente para a Yamaha FZ15
           </span>
+
 
           <h1 className="mt-4 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
             DEX Tank: <span className="text-primary">adaptador de bocal de tanque</span> para Yamaha
