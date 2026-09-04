@@ -12,7 +12,7 @@ export function Hero() {
             Oferta de lançamento
           </span>
           <div className="flex w-fit items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
-            <Globe className="h-4 w-4" aria-hidden="true" /> o único no mercado para Yamaha FZ 15
+            <Globe className="h-4 w-4" aria-hidden="true" /> O ÚNICO NO MERCADO PARA YAMAHA FZ 15
           </div>
 
 
