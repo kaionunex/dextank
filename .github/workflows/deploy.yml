@@ -13,13 +13,13 @@ jobs:
       - name: Baixar codigo
         uses: actions/checkout@v4
 
-      - name: Instalar Node
+      - name: Configurar Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm ci --legacy-peer-deps || npm install --legacy-peer-deps
 
       - name: Gerar build
         run: npm run build
@@ -27,7 +27,7 @@ jobs:
       - name: Conferir arquivos gerados no build
         run: ls -la dist/
 
-      - name: Enviar para a Hostinger
+      - name: Enviar para a Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
