@@ -45,7 +45,7 @@ export function VideoInstall() {
         </div>
 
         <div className="mx-auto mt-8 max-w-md">
-          <CtaButton href="#oferta" />
+          <CtaButton href="#avaliacoes">VER QUEM JÁ INSTALOU</CtaButton>
           <p className="mt-2 text-center text-xs text-muted-foreground">
             {PRODUTO.preco} à vista ou {PRODUTO.parcelas} no cartão
           </p>

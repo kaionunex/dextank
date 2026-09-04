@@ -18,7 +18,8 @@ export const PRODUTO = {
   estoqueTotal: 142,
   garantiaDias: 90,
   nota: 4.9,
-  avaliacoes: 1287,
+  compradores: 1287,
+  avaliacoes: 428,
 };
 
 export const EMPRESA = {
