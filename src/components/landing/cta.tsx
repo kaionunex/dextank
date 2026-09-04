@@ -86,10 +86,10 @@ export function TopBar() {
             <Truck className="h-4 w-4" aria-hidden="true" /> Frete grátis para todo o Brasil — só
             hoje
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded bg-background px-2.5 py-1 text-sm text-primary shadow-sm tabular-nums ring-1 ring-primary animate-pulse sm:text-base">
+          <span className="inline-flex items-center gap-1.5 rounded bg-background px-2 py-0.5 text-xs text-primary shadow-sm tabular-nums ring-1 ring-primary animate-pulse sm:text-sm">
             <span className="hidden sm:inline">Oferta expira em</span>
             <span className="sm:hidden">Expira em</span>
-            <span className="font-display text-base tracking-wide sm:text-lg">{time}</span>
+            <span className="font-semibold tabular-nums">{time}</span>
           </span>
         </div>
       </div>
