@@ -69,8 +69,8 @@ export function Footer() {
               {EMPRESA.email}
             </a>
             <p className="mt-1 text-xs leading-relaxed">
-              Tire suas dúvidas antes de comprar — resposta rápida de segunda a sexta, das 9h às
-              18h.
+              Precisa de ajuda? Entre em contato conosco — atendimento de segunda a sexta, das 9h
+              às 18h.
             </p>
           </div>
         </div>
