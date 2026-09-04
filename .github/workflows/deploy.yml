@@ -25,11 +25,20 @@ jobs:
       - name: Gerar build
         run: npm run build
 
+      - name: Raio-X das pastas
+        run: |
+          echo "--- RAIZ DO PROJETO ---"
+          ls -la
+          echo "--- DENTRO DA PASTA DIST ---"
+          ls -la dist/ || echo "Pasta dist vazia ou inexistente"
+          echo "--- PROCURANDO INDEX.HTML ---"
+          find . -name "index.html"
+
       - name: Enviar arquivos via LFTP
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           lftp -c "
             set ftp:ssl-allow no;
             open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }};
-            mirror -R dist/ dextank/ --parallel=5 --verbose;
+            mirror -R ./dist/ ./dextank/ --parallel=5 --verbose;
           "
