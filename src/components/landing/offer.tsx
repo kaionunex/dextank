@@ -152,7 +152,7 @@ export function FinalCta() {
           enquanto a oferta está no ar.
         </p>
         <div className="mx-auto mt-6 max-w-md">
-          <CtaButton />
+          <CtaButton href="#oferta" />
           <p className="mt-2 text-xs text-muted-foreground">
             {PRODUTO.preco} • {PRODUTO.precoPix} no Pix • {PRODUTO.parcelas}
           </p>
