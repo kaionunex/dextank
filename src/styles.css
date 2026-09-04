@@ -148,9 +148,9 @@
     left: -0.1em;
     right: -0.1em;
     top: 50%;
-    height: 1px;
+    height: 1.5px;
     background: currentColor;
-    transform: translateY(-50%) rotate(-16deg);
+    transform: translateY(-50%) rotate(-12deg);
     clip-path: inset(25% 0 25% 0);
     border-radius: 9999px;
     pointer-events: none;
@@ -166,9 +166,9 @@
     left: -0.1em;
     right: -0.1em;
     top: 50%;
-    height: 1px;
+    height: 1.5px;
     background: var(--color-destructive);
-    transform: translateY(-50%) rotate(-16deg);
+    transform: translateY(-50%) rotate(-12deg);
     clip-path: inset(25% 0 25% 0);
     border-radius: 9999px;
     pointer-events: none;
