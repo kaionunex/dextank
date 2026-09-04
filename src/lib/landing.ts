@@ -13,7 +13,7 @@ export const PRODUTO = {
   precoNumero: 127.9,
   precoPix: "R$ 115,11",
   parcelas: "12x de R$ 12,56",
-  economia: "R$ 100,00",
+  economia: "R$ 70,00",
   estoqueLote: 37,
   estoqueTotal: 142,
   garantiaDias: 90,
