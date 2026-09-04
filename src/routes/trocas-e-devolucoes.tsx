@@ -4,7 +4,7 @@ import { PolicyPage } from "@/components/landing/policy-page";
 export const Route = createFileRoute("/trocas-e-devolucoes")({
   head: () => ({
     meta: [
-      { title: "Trocas e Devoluções | Adaptador de Bocal FZ15" },
+      { title: "Trocas e Devoluções | DEX Tank" },
       {
         name: "description",
         content:

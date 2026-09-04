@@ -4,7 +4,7 @@ import { PolicyPage } from "@/components/landing/policy-page";
 export const Route = createFileRoute("/politica-de-entrega")({
   head: () => ({
     meta: [
-      { title: "Política de Entrega | Adaptador de Bocal FZ15" },
+      { title: "Política de Entrega | DEX Tank" },
       {
         name: "description",
         content: "Como funcionam o envio, o frete grátis e o rastreio do seu pedido para todo o Brasil.",
