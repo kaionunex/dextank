@@ -9,7 +9,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:py-16">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
-            <Globe className="h-4 w-4" aria-hidden="true" /> O único do mercado mundial projetado
+            <Globe className="h-4 w-4" aria-hidden="true" /> O único do mercado projetado
             exclusivamente para a Yamaha FZ15
           </span>
 
