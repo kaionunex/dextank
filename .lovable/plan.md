@@ -2,36 +2,39 @@
 
 ## O que será feito
 
-Criar uma seção nova na página dedicada ao vídeo que mostra a remoção do bocal original e a instalação do DEX Tank na FZ15. O vídeo ainda não está disponível, então entra um vídeo temporário (placeholder) no formato vertical/horizontal conforme o material final — fácil de trocar depois, basta substituir um arquivo.
+Criar uma seção nova na página dedicada ao vídeo que mostra a remoção do bocal original e a instalação do DEX Tank na FZ15. O vídeo real ainda não está disponível, então entra um vídeo temporário (placeholder) — a troca depois é só substituir um arquivo.
 
-## Posição na página (pensando em conversão)
+## Posição na página (decisão pensando em conversão)
 
-A dobra entra **logo depois da seção "Instalação em 3 passos" e antes das avaliações**. Motivo: o visitante acabou de ler que a instalação leva 3 passos — o vídeo prova na hora que é verdade, eliminando a última dúvida ("será que eu consigo instalar?") antes de ele chegar nos depoimentos e na oferta.
+O vídeo é a prova mais forte da página — mais forte que o texto dos 3 passos. Por isso ele entra **antes da seção "Instalação em 3 passos"**, logo depois da Exclusividade:
 
 ```text
 Hero → Antes/Depois → Benefícios → Exclusividade
-     → Instalação em 3 passos → [NOVO: VÍDEO] → Avaliações → Oferta → ...
+     → [NOVO: VÍDEO] → Instalação em 3 passos → Avaliações → Oferta → ...
 ```
+
+Motivo: o visitante chega ao vídeo já sabendo o que o produto resolve e que ele é exclusivo — o vídeo converte a promessa em prova visual, e a seção de 3 passos logo abaixo funciona como reforço/resumo do que ele acabou de assistir. A pessoa mais indecisa assiste e compra direto pelo CTA da própria dobra, sem precisar rolar até a oferta.
 
 ## Estrutura da dobra
 
-- **Título:** "Veja como é fácil instalar" com destaque em laranja
-- **Subtítulo:** texto curto reforçando que é sem ferramenta, sem mecânico, e que o resultado deixa o tanque mais bonito
+- **Headline de conversão** (puxando para a compra): "Veja instalado na FZ15 em menos de 2 minutos — e nunca mais tire a tampa pra abastecer" com destaque em laranja
+- **Subtítulo curto:** sem ferramenta, sem mecânico, sem alterar nada no tanque — e o tanque fica com visual muito mais limpo
 - **Vídeo centralizado** com:
   - Player nativo do navegador (botão de play, sem autoplay com som)
   - Imagem de capa (poster) enquanto o vídeo não é iniciado — evita tela preta e não pesa o carregamento
-  - Carregamento adiado (lazy) para não atrapalhar a velocidade da página no mobile
+  - Carregamento adiado (lazy) para não atrapalhar a velocidade no mobile
   - Moldura com borda no padrão visual do site
-- **3 selos rápidos abaixo do vídeo:** "Sem ferramentas", "Menos de 2 minutos", "Encaixe perfeito"
-- **CTA ao final da dobra:** botão "QUERO O MEU AGORA" rolando até a oferta — quem assistiu o vídeo está no ponto mais quente de decisão
+- **CTA logo abaixo do vídeo:** botão "QUERO O MEU AGORA" rolando até a oferta (`#oferta`), com a linha de preço "R$ 127,90 à vista ou 12x de R$ 12,56 no cartão" — quem assistiu está no ponto mais quente de decisão
+- **3 selos rápidos:** "Sem ferramentas", "Menos de 2 minutos", "Encaixe perfeito"
 
 ## Como trocar o vídeo depois
 
-O arquivo ficará em `public/videos/instalacao.mp4` com uma imagem de capa em `public/videos/capa-instalacao.jpg`. Para colocar o vídeo real, basta substituir esses dois arquivos (ou me mandar o vídeo que eu mesmo troco).
+O arquivo ficará em `public/videos/instalacao.mp4` com a capa em `public/videos/capa-instalacao.jpg`. Para colocar o vídeo real, basta me mandar o arquivo que eu mesmo troco (ou substituir os dois arquivos).
 
 ## Detalhes técnicos
 
-- Novo componente `src/components/landing/video-install.tsx`, inserido em `src/routes/index.tsx` entre `Install` e `Reviews`
+- Novo componente `src/components/landing/video-install.tsx`, inserido em `src/routes/index.tsx` entre `Exclusivity` e `Install`
 - Tag `<video controls playsInline preload="none" poster=...>` — sem bibliotecas externas, sem YouTube (evita distração e saída da página)
-- Placeholder: um vídeo curto genérico será incluído apenas para validar o layout; o material real entra depois
+- CTA reutiliza o `CtaButton` existente com `href="#oferta"`
+- Placeholder: vídeo curto genérico só para validar o layout; o material real entra depois
 - Verificação com typecheck e teste visual no mobile (390px) via Playwright
