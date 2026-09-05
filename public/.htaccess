@@ -1,6 +1,6 @@
 Options -MultiViews
 RewriteEngine On
-RewriteBase /dextank/
+RewriteBase /
 
 # Serve arquivos e diretorios existentes normalmente
 RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -8,7 +8,7 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # /rota -> /rota/index.html (paginas pre-renderizadas)
-RewriteCond %{DOCUMENT_ROOT}/dextank/$1/index.html -f
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^(.*?)/?$ $1/index.html [L]
 
 # Fallback SPA
