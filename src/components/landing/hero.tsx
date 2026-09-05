@@ -51,7 +51,7 @@ export function Hero() {
             </div>
             <p className="text-sm text-muted-foreground">
               <strong className="text-foreground">{PRODUTO.nota}</strong> de 5 —{" "}
-              {PRODUTO.compradores.toLocaleString("pt-BR")} já instalaram
+              {PRODUTO.compradores.toLocaleString("pt-BR")} motociclistas já instalaram
             </p>
           </div>
 
