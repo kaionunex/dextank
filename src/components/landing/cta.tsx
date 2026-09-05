@@ -78,29 +78,19 @@ export function useCountdown(minutes = 14) {
 export function TopBar() {
   const time = useCountdown();
   return (
-    <>
-      <div className="w-full bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide sm:text-sm">
-          <span className="inline-flex items-center gap-1.5">
-            <Truck className="h-4 w-4" aria-hidden="true" /> Frete grátis para todo o Brasil — só
-            hoje
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded bg-background px-2 py-0.5 text-xs text-primary shadow-sm tabular-nums ring-1 ring-primary animate-pulse sm:text-sm">
-            <span className="hidden sm:inline">Oferta expira em</span>
-            <span className="sm:hidden">Expira em</span>
-            <span className="font-bold tabular-nums">{time}</span>
-          </span>
-        </div>
+    <div className="w-full bg-primary text-primary-foreground">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide sm:text-sm">
+        <span className="inline-flex items-center gap-1.5">
+          <Truck className="h-4 w-4" aria-hidden="true" /> Frete grátis para todo o Brasil — só
+          hoje
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded bg-background px-2 py-0.5 text-xs text-primary shadow-sm tabular-nums ring-1 ring-primary animate-pulse sm:text-sm">
+          <span className="hidden sm:inline">Oferta expira em</span>
+          <span className="sm:hidden">Expira em</span>
+          <span className="font-bold tabular-nums">{time}</span>
+        </span>
       </div>
-      <div className="w-full border-b border-border bg-background">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <BrandLogo />
-          <span className="hidden text-xs font-semibold uppercase tracking-wide text-primary sm:inline">
-            Fabricação própria — envio imediato
-          </span>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }
 
