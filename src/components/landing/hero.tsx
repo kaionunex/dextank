@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <header className="relative overflow-hidden border-b border-border">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:py-16">
-        <div>
+        <div className="order-2 lg:order-1">
           <span className="mb-3 inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground">
             Oferta de lançamento
           </span>
@@ -50,7 +50,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative order-1 lg:order-2">
           <img
             src={heroImg}
             alt="Adaptador de bocal de tanque Dex Tank instalado e aberto no tanque de uma Yamaha FZ15"
