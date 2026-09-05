@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ShieldCheck, Truck, Zap } from "lucide-react";
+import { ShieldCheck, TicketPercent, Truck, Zap } from "lucide-react";
 import { CHECKOUT_URL, MARCA, PRODUTO } from "@/lib/landing";
 import { cn } from "@/lib/utils";
 
@@ -32,11 +32,11 @@ export function CtaButton({
       href={href}
       className={cn(
         "group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary font-display uppercase tracking-wide text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02] active:scale-[0.99]",
-        size === "lg" ? "px-6 py-4 text-lg sm:text-xl" : "px-4 py-3 text-base",
+        size === "lg" ? "px-6 py-4 text-xl sm:text-2xl" : "px-4 py-3 text-base",
         className,
       )}
     >
-      <Zap className="h-5 w-5" aria-hidden="true" />
+      <Zap className={cn("shrink-0", size === "lg" ? "h-6 w-6" : "h-5 w-5")} aria-hidden="true" />
       {children}
     </a>
   );
@@ -139,7 +139,7 @@ export function TrustRow() {
         {PRODUTO.garantiaDias} dias
       </span>
       <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-        <Zap className="h-4 w-4 text-primary" aria-hidden="true" /> Pix com 10% OFF
+        <TicketPercent className="h-4 w-4 text-primary" aria-hidden="true" /> Pix com 10% OFF
       </span>
     </div>
   );
