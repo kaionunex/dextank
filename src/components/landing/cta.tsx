@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ShieldCheck, Truck, Zap } from "lucide-react";
+import { ShieldCheck, TicketPercent, Truck, Zap } from "lucide-react";
 import { CHECKOUT_URL, MARCA, PRODUTO } from "@/lib/landing";
 import { cn } from "@/lib/utils";
 
