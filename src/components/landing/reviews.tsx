@@ -378,7 +378,9 @@ export function Reviews() {
             <div className="mt-1 flex justify-start">
               <Stars n={5} />
             </div>
-            <p className="mt-1 text-xs text-muted-foreground">382 a0avaliações</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {PRODUTO.avaliacoes.toLocaleString("pt-BR")} avaliações
+            </p>
           </div>
           <div className="space-y-1.5">
             {distribuicao.map(([estrelas, pct]) => (
