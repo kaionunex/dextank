@@ -6,8 +6,8 @@ import { PRODUTO } from "@/lib/landing";
 export function Hero() {
   return (
     <header className="relative overflow-hidden border-b border-border">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:py-16">
-        <div className="order-2 lg:order-1">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:grid-rows-2 lg:py-16">
+        <div className="order-1">
           <span className="mb-3 inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground">
             Oferta de lançamento
           </span>
@@ -25,8 +25,25 @@ export function Hero() {
             abre para o lado. Sem chave na mão, sem tampa apoiada no tanque, sem risco de arranhar a
             pintura.
           </p>
+        </div>
 
-          <div className="mt-5 flex items-center gap-3">
+        <div className="relative order-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <img
+            src={heroImg}
+            alt="Adaptador de bocal de tanque Dex Tank instalado e aberto no tanque de uma Yamaha FZ15"
+            width={1408}
+            height={1056}
+            className="w-full rounded-xl border border-border object-cover shadow-2xl"
+          />
+          <div className="absolute -bottom-4 left-4 rounded-lg border border-border bg-surface px-4 py-2 shadow-xl">
+            <p className="font-display text-sm text-primary">
+              Compatível com FZ15 2022, 2023, 2024, 2025 e 2026
+            </p>
+          </div>
+        </div>
+
+        <div className="order-3">
+          <div className="flex items-center gap-3">
             <div className="flex" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-5 w-5 fill-primary text-primary" />
@@ -47,21 +64,6 @@ export function Hero() {
 
           <div className="mt-6">
             <TrustRow />
-          </div>
-        </div>
-
-        <div className="relative order-1 lg:order-2">
-          <img
-            src={heroImg}
-            alt="Adaptador de bocal de tanque Dex Tank instalado e aberto no tanque de uma Yamaha FZ15"
-            width={1408}
-            height={1056}
-            className="w-full rounded-xl border border-border object-cover shadow-2xl"
-          />
-          <div className="absolute -bottom-4 left-4 rounded-lg border border-border bg-surface px-4 py-2 shadow-xl">
-            <p className="font-display text-sm text-primary">
-              Compatível com FZ15 2022, 2023, 2024, 2025 e 2026
-            </p>
           </div>
         </div>
       </div>
