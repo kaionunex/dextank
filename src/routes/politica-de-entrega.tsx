@@ -13,10 +13,10 @@ export const Route = createFileRoute("/politica-de-entrega")({
       { property: "og:title", content: "Política de Entrega" },
       { property: "og:description", content: "Envio para todo o Brasil com rastreio." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/politica-de-entrega" },
+      { property: "og:url", content: "https://dextank.com.br/politica-de-entrega" },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "/politica-de-entrega" }],
+    links: [{ rel: "canonical", href: "https://dextank.com.br/politica-de-entrega" }],
   }),
   component: Page,
 });

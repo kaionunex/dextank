@@ -13,10 +13,10 @@ export const Route = createFileRoute("/politica-de-privacidade")({
       { property: "og:title", content: "Política de Privacidade" },
       { property: "og:description", content: "Como tratamos e protegemos os seus dados pessoais." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/politica-de-privacidade" },
+      { property: "og:url", content: "https://dextank.com.br/politica-de-privacidade" },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "/politica-de-privacidade" }],
+    links: [{ rel: "canonical", href: "https://dextank.com.br/politica-de-privacidade" }],
   }),
   component: Page,
 });
