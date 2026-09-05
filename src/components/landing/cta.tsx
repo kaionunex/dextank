@@ -139,7 +139,7 @@ export function TrustRow() {
         {PRODUTO.garantiaDias} dias
       </span>
       <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-        <Zap className="h-4 w-4 text-primary" aria-hidden="true" /> Pix com 10% OFF
+        <TicketPercent className="h-4 w-4 text-primary" aria-hidden="true" /> Pix com 10% OFF
       </span>
     </div>
   );
