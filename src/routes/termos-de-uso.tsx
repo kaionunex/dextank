@@ -13,10 +13,10 @@ export const Route = createFileRoute("/termos-de-uso")({
       { property: "og:title", content: "Termos de Uso" },
       { property: "og:description", content: "Condições de uso do site e de compra." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/termos-de-uso" },
+      { property: "og:url", content: "https://dextank.com.br/termos-de-uso" },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "/termos-de-uso" }],
+    links: [{ rel: "canonical", href: "https://dextank.com.br/termos-de-uso" }],
   }),
   component: Page,
 });

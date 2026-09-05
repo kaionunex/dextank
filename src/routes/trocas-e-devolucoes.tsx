@@ -13,10 +13,10 @@ export const Route = createFileRoute("/trocas-e-devolucoes")({
       { property: "og:title", content: "Política de Trocas e Devoluções" },
       { property: "og:description", content: "Arrependimento em 7 dias e garantia de 90 dias." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/trocas-e-devolucoes" },
+      { property: "og:url", content: "https://dextank.com.br/trocas-e-devolucoes" },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "/trocas-e-devolucoes" }],
+    links: [{ rel: "canonical", href: "https://dextank.com.br/trocas-e-devolucoes" }],
   }),
   component: Page,
 });
