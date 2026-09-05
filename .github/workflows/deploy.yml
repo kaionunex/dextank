@@ -31,5 +31,5 @@ jobs:
           lftp -c "
             set ftp:ssl-allow no;
             open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }};
-            mirror -R ./.output/public/ ./dextank/ --parallel=5 --verbose;
+            mirror -R ./.output/public/ ./ --parallel=5 --verbose;
           "
