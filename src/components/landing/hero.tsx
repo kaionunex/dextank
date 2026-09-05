@@ -43,7 +43,7 @@ export function Hero() {
         </div>
 
         <div className="order-3">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:gap-3 sm:text-left">
             <div className="flex" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-5 w-5 fill-primary text-primary" />
@@ -51,7 +51,7 @@ export function Hero() {
             </div>
             <p className="text-sm text-muted-foreground">
               <strong className="text-foreground">{PRODUTO.nota}</strong> de 5 —{" "}
-              {PRODUTO.compradores.toLocaleString("pt-BR")} motociclistas já instalaram
+              {PRODUTO.compradores.toLocaleString("pt-BR")} já instalaram
             </p>
           </div>
 

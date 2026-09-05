@@ -130,16 +130,16 @@ export function StickyBuy() {
 
 export function TrustRow() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground sm:text-sm">
-      <span className="inline-flex items-center gap-1.5">
-        <Truck className="h-4 w-4 text-primary" aria-hidden="true" /> Frete grátis
+    <div className="flex flex-nowrap items-center justify-center gap-x-2 text-[10px] text-muted-foreground sm:gap-x-6 sm:text-sm">
+      <span className="inline-flex items-center gap-1 whitespace-nowrap">
+        <Truck className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4" aria-hidden="true" /> Frete grátis
       </span>
-      <span className="inline-flex items-center gap-1.5">
-        <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" /> Garantia de{" "}
+      <span className="inline-flex items-center gap-1 whitespace-nowrap">
+        <ShieldCheck className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4" aria-hidden="true" /> Garantia{" "}
         {PRODUTO.garantiaDias} dias
       </span>
-      <span className="inline-flex items-center gap-1.5">
-        <Zap className="h-4 w-4 text-primary" aria-hidden="true" /> Pix com 10% OFF
+      <span className="inline-flex items-center gap-1 whitespace-nowrap">
+        <Zap className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4" aria-hidden="true" /> Pix 10% OFF
       </span>
     </div>
   );
