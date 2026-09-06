@@ -40,7 +40,7 @@ function VisaIcon({ className }: { className?: string }) {
 function MastercardIcon({ className }: { className?: string }) {
   return (
     <CardShell className={className}>
-      <svg viewBox="0 0 18 12" className="h-3.5 w-auto" aria-hidden="true">
+      <svg viewBox="0 0 18 12" className="h-[13px] w-auto" aria-hidden="true">
         <circle cx="6" cy="6" r="4.5" fill="currentColor" opacity="0.9" />
         <circle cx="12" cy="6" r="4.5" fill="currentColor" opacity="0.5" />
       </svg>
@@ -51,7 +51,7 @@ function MastercardIcon({ className }: { className?: string }) {
 function AmexIcon({ className }: { className?: string }) {
   return (
     <CardShell className={className}>
-      <svg viewBox="0 0 34 12" className="h-6 w-auto" aria-hidden="true">
+      <svg viewBox="0 0 34 12" className="h-[25px] w-auto" aria-hidden="true">
         <text
           x="17"
           y="9"
