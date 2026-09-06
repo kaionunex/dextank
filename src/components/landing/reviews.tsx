@@ -406,20 +406,18 @@ export function Reviews() {
             {/* Selos */}
             <div className="mt-4 flex flex-row justify-between gap-3 border-t border-border/30 pt-4 md:mt-0 md:flex-col md:justify-start md:gap-2 md:border-l md:border-t-0 md:pl-8 md:pt-0 lg:pl-14">
               <div className="flex items-center gap-3">
-                <BadgeCheck className="h-7 w-7 shrink-0 text-success" aria-hidden="true" />
+                <BadgeCheck className="h-5 w-5 shrink-0 text-success" aria-hidden="true" />
                 <div className="flex flex-row items-baseline gap-1 md:flex-col md:items-start">
-                  <div className="text-xl font-bold leading-none text-foreground">{PRODUTO.recomendam}%</div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground md:text-[10px]">Recomendam</div>
+                  <span className="text-xs font-bold text-muted-foreground">{PRODUTO.recomendam}%</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Recomendam</span>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <ShieldCheck className="h-7 w-7 shrink-0 text-primary" aria-hidden="true" />
-                <div>
-                  <div className="text-[13px] font-bold leading-none text-foreground md:hidden">Satisfação Total</div>
-                  <div className="hidden md:block">
-                    <div className="text-[13px] font-bold leading-none text-foreground">Compra Garantida</div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Satisfação Total</div>
-                  </div>
+                <ShieldCheck className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                <div className="flex flex-row items-baseline gap-1 md:flex-col md:items-start">
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground md:hidden">Satisfação Total</span>
+                  <span className="hidden text-xs font-bold uppercase tracking-wider text-muted-foreground md:block">Compra Garantida</span>
+                  <span className="hidden text-xs font-bold uppercase tracking-wider text-muted-foreground md:block">Satisfação Total</span>
                 </div>
               </div>
             </div>
