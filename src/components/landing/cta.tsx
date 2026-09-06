@@ -77,7 +77,8 @@ export function useCountdown(minutes = 14) {
 
 const STOCK_KEY = "dextank_stock";
 const STOCK_MIN = 12;
-const STOCK_STEP_MS = 10000;
+const STOCK_INTERVAL_MIN_MS = 20 * 1000;
+const STOCK_INTERVAL_MAX_MS = 30 * 1000;
 
 type StockState = { valor: number; inicio: number };
 
@@ -111,7 +112,18 @@ function saveStock(state: StockState) {
   }
 }
 
-/** Estoque do lote que vai caindo sozinho, com persistência no navegador. */
+function randomStep() {
+  return Math.floor(Math.random() * 3) + 1; // 1, 2 ou 3
+}
+
+function randomDelay() {
+  return (
+    Math.floor(Math.random() * (STOCK_INTERVAL_MAX_MS - STOCK_INTERVAL_MIN_MS + 1)) +
+    STOCK_INTERVAL_MIN_MS
+  );
+}
+
+/** Estoque em estoque que vai caindo sozinho, com persistência no navegador. */
 export function useEstoque() {
   const [estoque, setEstoque] = useState(PRODUTO.estoqueLote);
 
@@ -119,17 +131,24 @@ export function useEstoque() {
     const state = readStock();
     setEstoque(state.valor);
 
-    const t = setInterval(() => {
-      setEstoque((atual) => {
-        if (atual <= STOCK_MIN) return atual;
-        const passo = Math.random() < 0.25 ? 2 : 1;
-        const proximo = Math.max(STOCK_MIN, atual - passo);
-        saveStock({ valor: proximo, inicio: state.inicio });
-        return proximo;
-      });
-    }, STOCK_STEP_MS);
+    let timeoutId: ReturnType<typeof setTimeout>;
 
-    return () => clearInterval(t);
+    const schedule = () => {
+      timeoutId = setTimeout(() => {
+        setEstoque((atual) => {
+          if (atual <= STOCK_MIN) return atual;
+          let proximo = Math.max(STOCK_MIN, atual - randomStep());
+          if (proximo === 13) proximo = STOCK_MIN; // nunca exibir 13
+          saveStock({ valor: proximo, inicio: state.inicio });
+          return proximo;
+        });
+        schedule();
+      }, randomDelay());
+    };
+
+    schedule();
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return estoque;
