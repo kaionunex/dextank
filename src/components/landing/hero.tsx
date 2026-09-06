@@ -27,7 +27,7 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="relative order-2 self-start lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <div className="relative order-2 self-start lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-[79px]">
           <img
             src={heroImg}
             alt="Adaptador de bocal de tanque Dex Tank instalado e aberto no tanque de uma Yamaha FZ15"
