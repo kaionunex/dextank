@@ -104,7 +104,7 @@ export function Offer() {
 
 export function Guarantee() {
   return (
-    <section className="py-14">
+    <section className="py-20">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 text-center">
         <ShieldCheck className="h-12 w-12 text-success" aria-hidden="true" />
         <h2 className="mt-4 font-display text-3xl text-foreground">
@@ -129,7 +129,7 @@ export function Guarantee() {
 
 export function Faq() {
   return (
-    <section className="bg-section-alt py-14" id="faq">
+    <section className="bg-section-alt py-20" id="faq">
       <div className="mx-auto max-w-3xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
           Perguntas frequentes sobre o adaptador de bocal FZ15
@@ -149,7 +149,7 @@ export function Faq() {
 
 export function FinalCta() {
   return (
-    <section className="py-14">
+    <section className="py-20">
       <div className="mx-auto max-w-2xl px-4 text-center">
         <h2 className="font-display text-3xl text-foreground sm:text-4xl">
           Sua FZ15 merece essa <span className="text-primary">praticidade</span>
