@@ -54,9 +54,8 @@ function AmexIcon({ className }: { className?: string }) {
       <svg viewBox="0 0 34 12" className="h-[25px] w-auto" aria-hidden="true">
         <text
           x="17"
-          y="6"
+          y="9"
           textAnchor="middle"
-          dominantBaseline="middle"
           fontSize="7"
           fontWeight="800"
           fill="currentColor"
