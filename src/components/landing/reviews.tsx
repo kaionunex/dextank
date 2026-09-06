@@ -374,7 +374,7 @@ export function Reviews() {
           <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
           {/* Mobile: layout empilhado (inalterado) */}
           <div className="relative rounded-2xl bg-surface p-4 shadow-lg md:hidden">
-            <div className="grid grid-cols-[auto_1fr] items-center gap-4">
+            <div className="grid grid-cols-[auto_1fr] items-center gap-6">
               <div className="text-center">
                 <p className="font-display text-4xl text-foreground">{PRODUTO.nota}</p>
                 <div className="mt-0.5 flex justify-center">
@@ -388,6 +388,7 @@ export function Reviews() {
                 {distribuicao.map(([estrelas, pct]) => (
                   <div key={estrelas} className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <span className="w-3 tabular-nums">{estrelas}</span>
+                    <Star className="h-3 w-3 shrink-0 fill-primary text-primary" aria-hidden="true" />
                     <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
                       <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
                     </div>
