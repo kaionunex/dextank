@@ -13,7 +13,7 @@ export function Offer() {
   const time = useCountdown();
   const pct = Math.round((PRODUTO.estoqueLote / PRODUTO.estoqueTotal) * 100);
   return (
-    <section className="bg-section-alt py-14" id="oferta">
+    <section className="py-20" id="oferta">
       <div className="mx-auto max-w-4xl px-4">
         <div className="relative grid gap-8 rounded-2xl bg-surface p-6 sm:p-8 md:grid-cols-2 md:items-center">
           <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground shadow-lg">
@@ -137,7 +137,7 @@ export function Faq() {
         <Accordion type="single" collapsible className="mt-6">
           {FAQ.map(({ q, a }) => (
             <AccordionItem key={q} value={q}>
-              <AccordionTrigger className="text-left text-base font-normal">{q}</AccordionTrigger>
+              <AccordionTrigger className="text-left text-base font-light">{q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">{a}</AccordionContent>
             </AccordionItem>
           ))}

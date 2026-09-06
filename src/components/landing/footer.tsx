@@ -75,7 +75,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="space-y-3 pt-6 text-xs leading-relaxed text-muted-foreground">
+        <div className="space-y-3 border-t border-border pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>
             O Dex Tank é um acessório desenvolvido como melhoria para o bocal do tanque, fabricado
             pela marca Dex e comercializado por {EMPRESA.razaoSocial}. Não é um produto original

@@ -4,7 +4,7 @@ import depois from "@/assets/depois.jpg";
 
 export function BeforeAfter() {
   return (
-    <section className="bg-section-alt py-14" id="antes-depois">
+    <section className="bg-section-alt py-20" id="antes-depois">
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
@@ -143,7 +143,7 @@ const beneficios = [
 
 export function Benefits() {
   return (
-    <section className="py-14" id="beneficios">
+    <section className="py-20" id="beneficios">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
           Por que ele vale <span className="text-primary">cada centavo</span>
@@ -164,7 +164,7 @@ export function Benefits() {
 
 export function Exclusivity() {
   return (
-    <section className="bg-section-alt py-14">
+    <section className="bg-section-alt py-20">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <p className="font-display text-sm uppercase tracking-widest text-primary">
           Não existe igual no mercado

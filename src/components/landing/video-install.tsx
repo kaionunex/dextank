@@ -12,7 +12,7 @@ const selos = [
 
 export function VideoInstall() {
   return (
-    <section className="py-14" id="video-instalacao">
+    <section className="py-20" id="video-instalacao">
       <div className="mx-auto max-w-4xl px-4">
         <h2 className="text-center font-display text-3xl leading-tight text-foreground sm:text-4xl">
           Veja instalado na FZ15 em menos de 2 minutos —{" "}
