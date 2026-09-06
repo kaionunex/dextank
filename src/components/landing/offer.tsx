@@ -137,7 +137,7 @@ export function Faq() {
         <Accordion type="single" collapsible className="mt-6">
           {FAQ.map(({ q, a }) => (
             <AccordionItem key={q} value={q}>
-              <AccordionTrigger className="font-sans text-left text-base font-light">{q}</AccordionTrigger>
+              <AccordionTrigger className="font-sans text-left text-base font-normal">{q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">{a}</AccordionContent>
             </AccordionItem>
           ))}
