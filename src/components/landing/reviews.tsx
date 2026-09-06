@@ -410,7 +410,7 @@ export function Reviews() {
             </div>
           </div>
           {/* Desktop/tablet: layout horizontal */}
-          <div className="relative hidden grid-cols-[1.4fr_1.2fr_1.4fr] items-center gap-0 rounded-2xl bg-surface px-6 py-6 shadow-lg md:grid lg:grid-cols-[1.5fr_1fr_1.5fr]">
+          <div className="relative hidden grid-cols-[1.4fr_1.2fr_1.4fr] items-center gap-0 rounded-2xl bg-surface px-5 py-6 shadow-lg md:grid lg:grid-cols-[1.5fr_1fr_1.5fr]">
             <div className="flex flex-col items-center pr-4 text-center">
               <p className="font-display text-6xl leading-none text-foreground">{PRODUTO.nota}</p>
               <div className="mt-2">
