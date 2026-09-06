@@ -4,7 +4,7 @@ import depois from "@/assets/depois.jpg";
 
 export function BeforeAfter() {
   return (
-    <section className="border-b border-border py-14" id="antes-depois">
+    <section className="bg-section-alt py-14" id="antes-depois">
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
@@ -22,7 +22,7 @@ export function BeforeAfter() {
           {/* BEFORE */}
           <div className="group relative">
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-b from-destructive/20 to-transparent blur-lg opacity-50 transition duration-500 group-hover:opacity-100" />
-            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface">
+            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-surface">
               <div className="relative aspect-square w-full overflow-hidden">
                 <img
                   src={antes}
@@ -63,7 +63,7 @@ export function BeforeAfter() {
           {/* AFTER */}
           <div className="group relative">
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-b from-primary/40 to-primary/0 blur-xl opacity-60 transition duration-500 group-hover:opacity-100" />
-            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-primary/20 bg-surface shadow-2xl shadow-black">
+            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-surface shadow-2xl shadow-black">
               <div className="relative aspect-square w-full overflow-hidden">
                 <img
                   src={depois}
@@ -143,14 +143,14 @@ const beneficios = [
 
 export function Benefits() {
   return (
-    <section className="border-b border-border py-14" id="beneficios">
+    <section className="py-14" id="beneficios">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
           Por que ele vale <span className="text-primary">cada centavo</span>
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {beneficios.map((b) => (
-            <div key={b.titulo} className="rounded-xl border border-border bg-surface p-5">
+            <div key={b.titulo} className="rounded-xl bg-surface p-5">
               <b.icon className="h-7 w-7 text-primary" aria-hidden="true" />
               <h3 className="mt-3 font-display text-lg text-foreground">{b.titulo}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{b.texto}</p>
@@ -164,7 +164,7 @@ export function Benefits() {
 
 export function Exclusivity() {
   return (
-    <section className="border-b border-border bg-surface py-14">
+    <section className="bg-section-alt py-14">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <p className="font-display text-sm uppercase tracking-widest text-primary">
           Não existe igual no mercado
@@ -184,7 +184,7 @@ export function Exclusivity() {
             ["Produção própria", "Controle total de qualidade lote a lote"],
             ["Fornecedor único", "Lote de lançamento com estoque limitado"],
           ].map(([t, s]) => (
-            <div key={t} className="rounded-xl border border-border bg-background p-4">
+            <div key={t} className="rounded-xl bg-surface p-4">
               <p className="font-display text-primary">{t}</p>
               <p className="mt-1 text-sm text-muted-foreground">{s}</p>
             </div>
