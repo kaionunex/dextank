@@ -375,7 +375,7 @@ export function Reviews() {
           <div className="relative rounded-2xl bg-surface p-6 shadow-lg">
             <div className="grid grid-cols-[auto_1fr] items-center gap-6">
               <div className="text-center">
-                <p className="font-display text-5xl text-primary">{PRODUTO.nota}</p>
+                <p className="font-display text-5xl text-foreground">{PRODUTO.nota}</p>
                 <div className="mt-1 flex justify-center">
                   <Stars n={5} />
                 </div>
@@ -383,7 +383,7 @@ export function Reviews() {
                   {PRODUTO.avaliacoes} avaliações
                 </p>
               </div>
-              <div className="space-y-1">
+              <div className="max-w-[260px] space-y-1">
                 {distribuicao.map(([estrelas, pct]) => (
                   <div key={estrelas} className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <span className="w-3 tabular-nums">{estrelas}</span>
@@ -394,7 +394,7 @@ export function Reviews() {
                 ))}
               </div>
             </div>
-            <div className="mt-5 flex items-center justify-between border-t border-border/50 pt-4">
+            <div className="mt-5 flex items-center justify-between border-t border-border/30 pt-4">
               <div className="inline-flex items-center gap-2 text-sm font-semibold text-success">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" aria-hidden="true" />
