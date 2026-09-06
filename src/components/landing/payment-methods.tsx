@@ -66,7 +66,7 @@ function MastercardIcon({ className }: { className?: string }) {
 
 function AmexIcon({ className }: { className?: string }) {
   return (
-    <IconBox className={className}>
+    <IconBox className={className} innerClassName="h-3.5 w-7">
       <svg viewBox="0 0 34 12" className="h-full w-full" aria-hidden="true">
         <text
           x="17"
