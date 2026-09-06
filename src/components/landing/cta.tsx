@@ -163,7 +163,7 @@ export function TopBar() {
           <Truck className="h-4 w-4" aria-hidden="true" /> Frete grátis para todo o Brasil — só
           hoje
         </span>
-        <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-background px-2 py-0.5 pb-1.5 text-xs font-bold text-foreground tabular-nums sm:text-sm">
+        <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground tabular-nums sm:text-sm">
           <Timer className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
           <span>Oferta expira em</span>
           <span className="tabular-nums">{time}</span>
