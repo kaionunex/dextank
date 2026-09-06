@@ -57,7 +57,7 @@ export function Hero() {
 
           <div className="mt-6">
             <CtaButton href="#avaliacoes" />
-            <p className="mt-2 text-center text-xs text-muted-foreground">
+            <p className="mt-2 text-left text-xs text-muted-foreground">
               {PRODUTO.preco} à vista ou {PRODUTO.parcelas} no cartão
             </p>
           </div>
