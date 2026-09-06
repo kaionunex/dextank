@@ -32,7 +32,7 @@ export function CtaButton({
       href={href}
       className={cn(
         "group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary font-display uppercase tracking-wide text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02] active:scale-[0.99]",
-        size === "lg" ? "px-6 py-4 text-xl sm:text-2xl" : "px-4 py-3 text-base",
+        size === "lg" ? "px-6 py-[11px] text-xl sm:text-2xl" : "px-4 py-[7px] text-base",
         className,
       )}
     >
