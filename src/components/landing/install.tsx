@@ -26,7 +26,7 @@ const passos = [
 
 export function Install() {
   return (
-    <section className="bg-section-alt py-14" id="instalacao">
+    <section className="bg-section-alt py-20" id="instalacao">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
           Instalação em <span className="text-primary">3 passos</span>
