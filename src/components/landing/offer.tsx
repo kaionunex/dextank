@@ -91,7 +91,7 @@ export function Offer() {
             </ul>
 
             <div className="mt-6">
-              <CtaButton>COMPRAR COM FRETE GRÁTIS</CtaButton>
+              <CtaButton className="pb-5">COMPRAR COM FRETE GRÁTIS</CtaButton>
               <p className="mt-2 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
                 <Lock className="h-3.5 w-3.5" aria-hidden="true" /> Compra 100% segura
               </p>
