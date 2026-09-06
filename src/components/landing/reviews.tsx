@@ -373,35 +373,38 @@ export function Reviews() {
         <div className="relative mt-8">
           <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
           <div className="relative flex flex-col rounded-2xl bg-surface p-6 shadow-lg md:flex-row md:items-stretch md:gap-10 lg:gap-16">
-            {/* Nota */}
-            <div className="flex flex-col items-center justify-center text-center md:border-r md:border-border/50 md:pr-10 lg:pr-16">
-              <p className="font-display text-6xl text-foreground">{PRODUTO.nota}</p>
-              <div className="mt-1 flex justify-center">
-                <Stars n={5} />
-              </div>
-              <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground">
-                {PRODUTO.avaliacoes} avaliações
-              </p>
-            </div>
-
-            {/* Distribuição */}
-            <div className="mt-5 w-full space-y-2.5 md:mt-0 md:flex-1">
-              {distribuicao.map(([estrelas, pct]) => (
-                <div key={estrelas} className="flex items-center gap-3 text-xs text-muted-foreground">
-                  <span className="w-3 tabular-nums font-bold">{estrelas}</span>
-                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
-                    <div
-                      className="h-full rounded-full bg-primary"
-                      style={{ width: `${pct}%`, opacity: pct > 10 ? 1 : 0.6 }}
-                    />
-                  </div>
-                  <span className="w-8 text-right tabular-nums">{pct}%</span>
+            {/* Mobile: Nota + Distribuição lado a lado; Desktop: 3 colunas */}
+            <div className="flex flex-row gap-4 md:contents">
+              {/* Nota */}
+              <div className="flex w-[120px] shrink-0 flex-col items-center justify-center text-center md:w-auto md:border-r md:border-border/50 md:pr-10 lg:pr-16">
+                <p className="font-display text-6xl text-foreground">{PRODUTO.nota}</p>
+                <div className="mt-1 flex justify-center">
+                  <Stars n={5} />
                 </div>
-              ))}
+                <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground">
+                  {PRODUTO.avaliacoes} avaliações
+                </p>
+              </div>
+
+              {/* Distribuição */}
+              <div className="flex-1 space-y-2.5 md:flex-1">
+                {distribuicao.map(([estrelas, pct]) => (
+                  <div key={estrelas} className="flex items-center gap-3 text-xs text-muted-foreground">
+                    <span className="w-3 tabular-nums font-bold">{estrelas}</span>
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+                      <div
+                        className="h-full rounded-full bg-primary"
+                        style={{ width: `${pct}%`, opacity: pct > 10 ? 1 : 0.6 }}
+                      />
+                    </div>
+                    <span className="w-8 text-right tabular-nums">{pct}%</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Selos */}
-            <div className="mt-5 flex flex-col justify-between gap-4 border-t border-border/30 pt-5 md:mt-0 md:border-l md:border-t-0 md:pl-10 md:pt-0 lg:pl-16">
+            <div className="mt-5 flex flex-row justify-between gap-4 border-t border-border/30 pt-5 md:mt-0 md:flex-col md:justify-between md:border-l md:border-t-0 md:pl-10 md:pt-0 lg:pl-16">
               <div className="flex items-center gap-3">
                 <div className="grid h-6 w-6 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-success/20 md:bg-success/10">
                   <BadgeCheck className="h-6 w-6 text-success" aria-hidden="true" />
