@@ -364,13 +364,13 @@ export function Reviews() {
   const restantes = depoimentos.length - visiveis;
 
   return (
-    <section className="scroll-mt-4 border-b border-border py-14" id="avaliacoes">
+    <section className="scroll-mt-4 py-14" id="avaliacoes">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
           Quem já instalou <span className="text-primary">aprova</span>
         </h2>
 
-        <div className="mt-8 grid gap-6 rounded-xl border border-border bg-surface p-6 sm:grid-cols-[auto_1fr] sm:items-center">
+        <div className="mt-8 grid gap-6 rounded-xl bg-surface p-6 sm:grid-cols-[auto_1fr] sm:items-center">
           <div className="text-center">
             <p className="font-display text-5xl text-foreground">
               {PRODUTO.nota.toString().replace(".", ",")}
@@ -397,7 +397,7 @@ export function Reviews() {
           {depoimentos.slice(0, visiveis).map((d) => (
             <article
               key={d.nome}
-              className="flex flex-col rounded-xl border border-border bg-surface p-4"
+              className="flex flex-col rounded-xl bg-surface p-4"
             >
               <Stars n={d.nota} />
               <p className="mt-2 flex-1 text-sm text-muted-foreground">“{d.texto}”</p>
