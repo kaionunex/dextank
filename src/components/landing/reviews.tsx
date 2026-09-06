@@ -383,10 +383,10 @@ export function Reviews() {
                   {PRODUTO.avaliacoes} avaliações
                 </p>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {distribuicao.map(([estrelas, pct]) => (
-                  <div key={estrelas} className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <span className="w-4 tabular-nums">{estrelas}★</span>
+                  <div key={estrelas} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <span className="w-3 tabular-nums">{estrelas}</span>
                     <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
                       <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
                     </div>
