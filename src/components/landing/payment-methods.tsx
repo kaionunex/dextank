@@ -17,10 +17,18 @@ function CardShell({
   );
 }
 
-function IconBox({ children, className }: { children: React.ReactNode; className: string | undefined }) {
+function IconBox({
+  children,
+  className,
+  innerClassName = "h-3 w-6",
+}: {
+  children: React.ReactNode;
+  className: string | undefined;
+  innerClassName?: string;
+}) {
   return (
     <CardShell className={className}>
-      <span className="flex h-3 w-6 items-center justify-center">{children}</span>
+      <span className={`flex items-center justify-center ${innerClassName}`}>{children}</span>
     </CardShell>
   );
 }
