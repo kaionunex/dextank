@@ -372,14 +372,14 @@ export function Reviews() {
 
         <div className="relative mt-8">
           <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
-          <div className="relative rounded-2xl border border-border bg-surface p-6 shadow-lg">
+          <div className="relative rounded-2xl bg-surface p-6 shadow-lg">
             <div className="grid grid-cols-[auto_1fr] items-center gap-6">
               <div className="text-center">
                 <p className="font-display text-5xl text-primary">{PRODUTO.nota}</p>
                 <div className="mt-1 flex justify-center">
                   <Stars n={5} />
                 </div>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground">
                   {PRODUTO.avaliacoes} avaliações
                 </p>
               </div>
@@ -394,7 +394,7 @@ export function Reviews() {
                 ))}
               </div>
             </div>
-            <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+            <div className="mt-5 flex items-center justify-between border-t border-border/50 pt-4">
               <div className="inline-flex items-center gap-2 text-sm font-semibold text-success">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" aria-hidden="true" />
