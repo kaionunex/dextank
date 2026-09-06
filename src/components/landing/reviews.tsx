@@ -370,17 +370,15 @@ export function Reviews() {
           Quem já instalou <span className="text-primary">aprova</span>
         </h2>
 
-        <div className="mt-8 grid grid-cols-[auto_1fr] items-center gap-6 rounded-xl border border-border bg-surface p-6">
-          <div className="text-left">
+        <div className="mt-8 grid gap-6 rounded-xl border border-border bg-surface p-6 sm:grid-cols-[auto_1fr] sm:items-center">
+          <div className="text-center">
             <p className="font-display text-5xl text-foreground">
               {PRODUTO.nota.toString().replace(".", ",")}
             </p>
-            <div className="mt-1 flex justify-start">
+            <div className="mt-1 flex justify-center">
               <Stars n={5} />
             </div>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {PRODUTO.avaliacoes.toLocaleString("pt-BR")} avaliações
-            </p>
+            <p className="mt-1 text-xs text-muted-foreground">382 a0avaliações</p>
           </div>
           <div className="space-y-1.5">
             {distribuicao.map(([estrelas, pct]) => (
