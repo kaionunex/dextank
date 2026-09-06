@@ -80,7 +80,7 @@ export function SocialProof() {
   return (
     <div
       aria-live="polite"
-      className={`pointer-events-none fixed bottom-20 left-3 z-40 max-w-[19rem] transition-all duration-500 sm:bottom-5 sm:left-5 ${
+      className={`pointer-events-none fixed bottom-[90px] left-3 z-40 max-w-[19rem] transition-all duration-500 sm:bottom-[90px] sm:left-5 lg:bottom-5 ${
         visivel ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
