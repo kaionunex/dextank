@@ -14,7 +14,7 @@ import {
 type Aviso = { nome: string; local: string; tempo: string };
 
 const PRIMEIRO_DELAY = 6000;
-const VISIVEL_MS = 6000;
+const VISIVEL_MS = 8000;
 
 export function SocialProof() {
   const [aviso, setAviso] = useState<Aviso | null>(null);
@@ -98,7 +98,7 @@ export function SocialProof() {
           </p>
           <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
             <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-success" aria-hidden="true" />
-            acabou de comprar{aviso.tempo === "agora mesmo" ? "" : ` ${aviso.tempo}`}
+            {aviso.tempo === "agora mesmo" ? "Acabou de comprar" : `Comprou ${aviso.tempo}`}
           </p>
         </div>
         <button
