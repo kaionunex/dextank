@@ -4,7 +4,7 @@ import depois from "@/assets/depois.jpg";
 
 export function BeforeAfter() {
   return (
-    <section className="bg-section-alt pt-10 pb-20" id="antes-depois">
+    <section className="bg-section-alt py-20" id="antes-depois">
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
