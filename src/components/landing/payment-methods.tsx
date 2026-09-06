@@ -109,7 +109,7 @@ function BoletoIcon({ className }: { className?: string }) {
 export function PaymentMethods({ className }: { className?: string }) {
   return (
     <div className={className}>
-      <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5">
+      <div className="payment-methods flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5">
         <VisaIcon />
         <MastercardIcon />
         <AmexIcon />
