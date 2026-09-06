@@ -95,6 +95,7 @@ export function Offer() {
               <p className="mt-2 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
                 <Lock className="h-3.5 w-3.5" aria-hidden="true" /> Compra 100% segura
               </p>
+              <PaymentMethods className="mt-2" />
             </div>
           </div>
         </div>
