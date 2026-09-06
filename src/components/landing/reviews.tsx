@@ -370,7 +370,7 @@ export function Reviews() {
           Quem já instalou <span className="text-primary">aprova</span>
         </h2>
 
-        <div className="mt-8 grid gap-6 rounded-xl bg-surface p-6 sm:grid-cols-[auto_1fr] sm:items-center">
+        <div className="mt-8 grid grid-cols-[auto_1fr] gap-6 rounded-xl bg-surface p-6 items-center">
           <div className="text-center">
             <p className="font-display text-5xl text-foreground">
               {PRODUTO.nota.toString().replace(".", ",")}
