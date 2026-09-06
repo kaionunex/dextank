@@ -85,6 +85,7 @@ function Index() {
       </main>
       <Footer />
       <StickyBuy />
+      <SocialProof />
     </div>
   );
 }
