@@ -200,7 +200,7 @@ export function StickyBuy() {
           <p className="font-display text-xl text-foreground">{PRODUTO.preco}</p>
         </div>
         <CtaButton size="sm" className="flex-1">
-          COMPRAR
+          COMPRAR AGORA
         </CtaButton>
       </div>
     </div>
