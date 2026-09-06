@@ -6,7 +6,7 @@ import { PRODUTO } from "@/lib/landing";
 export function Hero() {
   return (
     <header className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-5 pt-10 lg:grid-cols-2 lg:grid-rows-2 lg:-mb-8 lg:pb-0 lg:pt-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 -mb-8 pb-0 pt-10 lg:grid-cols-2 lg:grid-rows-2 lg:-mb-8 lg:pb-0 lg:pt-16">
         <div className="order-1">
           <span className="mb-3 inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground">
             Oferta de lançamento
@@ -42,8 +42,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="order-3 mx-auto flex w-full max-w-md flex-col items-center text-center sm:mx-0 sm:items-center lg:-translate-y-[90px]">
-          <div className="mt-5 flex flex-col items-center gap-2 text-center sm:mt-0 sm:flex-row sm:items-center sm:justify-center sm:gap-3 sm:text-center">
+        <div className="order-3 mx-auto flex w-full max-w-md flex-col items-center sm:mx-0 sm:items-center lg:-translate-y-[90px]">
+          <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-center sm:justify-center sm:gap-3 sm:text-center">
             <div className="flex" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-5 w-5 fill-primary text-primary" />
