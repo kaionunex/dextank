@@ -3,7 +3,7 @@ function CardShell({
   className,
 }: {
   children: React.ReactNode;
-  className?: string | undefined;
+  className: string | undefined;
 }) {
   return (
     <span
@@ -17,7 +17,7 @@ function CardShell({
   );
 }
 
-function IconBox({ children, className }: { children: React.ReactNode; className?: string }) {
+function IconBox({ children, className }: { children: React.ReactNode; className: string | undefined }) {
   return (
     <CardShell className={className}>
       <span className="flex h-3 w-6 items-center justify-center">{children}</span>
