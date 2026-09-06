@@ -76,8 +76,8 @@ export function Offer() {
 
             <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Truck className="h-4 w-4 text-primary" aria-hidden="true" /> Frete grátis para todo
-                o Brasil — só hoje
+                <Truck className="h-4 w-4 text-primary" aria-hidden="true" /> Frete Grátis para todo o
+                Brasil — Apenas hoje!
               </li>
               <li className="flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" /> Garantia de{" "}
@@ -92,8 +92,7 @@ export function Offer() {
             <div className="mt-6">
               <CtaButton>COMPRAR COM FRETE GRÁTIS</CtaButton>
               <p className="mt-2 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
-                <Lock className="h-3.5 w-3.5" aria-hidden="true" /> Ambiente 100% seguro — opções de
-                frete calculadas no checkout
+                <Lock className="h-3.5 w-3.5" aria-hidden="true" /> Compra 100% segura
               </p>
             </div>
           </div>

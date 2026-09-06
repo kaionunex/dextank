@@ -192,7 +192,7 @@ export function TrustRow() {
   return (
     <div className="flex flex-nowrap items-center justify-center gap-x-3 text-xs text-muted-foreground sm:gap-x-6 sm:text-sm">
       <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-        <Truck className="h-4 w-4 text-primary" aria-hidden="true" /> Frete grátis
+        <Truck className="h-4 w-4 text-primary" aria-hidden="true" /> Frete Grátis
       </span>
       <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
         <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" /> Garantia{" "}
