@@ -84,7 +84,7 @@ export function SocialProof() {
         visivel ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
-      <div className="pointer-events-auto flex items-center gap-3 rounded-xl bg-surface/95 p-2.5 pr-8 shadow-2xl ring-1 ring-border/60 backdrop-blur">
+      <div className="pointer-events-auto relative flex items-center gap-3 rounded-xl bg-surface/95 p-2.5 pr-8 shadow-2xl ring-1 ring-border/60 backdrop-blur">
         <img
           src={produto}
           alt=""

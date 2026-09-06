@@ -75,6 +75,66 @@ export function useCountdown(minutes = 14) {
   return `${mm}:${ss}`;
 }
 
+const STOCK_KEY = "dextank_stock";
+const STOCK_MIN = 12;
+const STOCK_STEP_MS = 10000;
+
+type StockState = { valor: number; inicio: number };
+
+function readStock(): StockState {
+  const now = Date.now();
+  const inicial = { valor: PRODUTO.estoqueLote, inicio: now };
+  try {
+    const raw = localStorage.getItem(STOCK_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw) as Partial<StockState>;
+      if (
+        typeof parsed.valor === "number" &&
+        typeof parsed.inicio === "number" &&
+        now < parsed.inicio + RESTART_AFTER_MS
+      ) {
+        return { valor: parsed.valor, inicio: parsed.inicio };
+      }
+    }
+    localStorage.setItem(STOCK_KEY, JSON.stringify(inicial));
+  } catch {
+    /* sem armazenamento disponível */
+  }
+  return inicial;
+}
+
+function saveStock(state: StockState) {
+  try {
+    localStorage.setItem(STOCK_KEY, JSON.stringify(state));
+  } catch {
+    /* ignora */
+  }
+}
+
+/** Estoque do lote que vai caindo sozinho, com persistência no navegador. */
+export function useEstoque() {
+  const [estoque, setEstoque] = useState(PRODUTO.estoqueLote);
+
+  useEffect(() => {
+    const state = readStock();
+    setEstoque(state.valor);
+
+    const t = setInterval(() => {
+      setEstoque((atual) => {
+        if (atual <= STOCK_MIN) return atual;
+        const passo = Math.random() < 0.25 ? 2 : 1;
+        const proximo = Math.max(STOCK_MIN, atual - passo);
+        saveStock({ valor: proximo, inicio: state.inicio });
+        return proximo;
+      });
+    }, STOCK_STEP_MS);
+
+    return () => clearInterval(t);
+  }, []);
+
+  return estoque;
+}
+
 export function TopBar() {
   const time = useCountdown();
   return (
