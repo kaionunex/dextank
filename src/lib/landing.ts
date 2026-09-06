@@ -19,7 +19,7 @@ export const PRODUTO = {
   garantiaDias: 90,
   nota: 4.9,
   compradores: 1287,
-  avaliacoes: 428,
+  avaliacoes: 328,
   recomendam: 98,
 };
 
