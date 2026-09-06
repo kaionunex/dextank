@@ -106,21 +106,17 @@ export function Guarantee() {
   return (
     <section className="py-20">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 text-center">
-        <ShieldCheck className="h-12 w-12 text-success" aria-hidden="true" />
-        <h2 className="mt-4 font-display text-3xl text-foreground">
-          <span className="sm:hidden">
-            {PRODUTO.garantiaDias} dias de garantia
-            <br />
-            o risco é nosso
-          </span>
-          <span className="hidden sm:inline">
-            {PRODUTO.garantiaDias} dias de garantia — o risco é nosso
-          </span>
+        <div className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-success/10 ring-2 ring-success/30">
+          <ShieldCheck className="h-10 w-10 text-success" aria-hidden="true" />
+        </div>
+        <h2 className="mt-6 font-display text-3xl text-foreground sm:text-4xl">
+          Satisfação garantida
         </h2>
-        <p className="mt-3 text-muted-foreground">
-          Instale, use no dia a dia e sinta a diferença. Se o produto apresentar qualquer defeito de
-          fabricação dentro de {PRODUTO.garantiaDias} dias, nós trocamos ou devolvemos o seu
-          dinheiro. Simples assim.
+        <p className="mt-2 font-sans text-xl text-primary">Ou seu dinheiro de volta</p>
+        <p className="mt-4 max-w-xl text-muted-foreground">
+          Você tem 7 dias para instalar o Dex Tank na sua FZ15, testar no dia a dia e sentir a
+          diferença no abastecimento. Se por qualquer motivo não ficar satisfeito, devolvemos 100%
+          do seu dinheiro. Simples, rápido e sem burocracia. O risco é nosso.
         </p>
       </div>
     </section>
