@@ -42,7 +42,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="order-3 mx-auto flex w-full max-w-md flex-col items-center sm:mx-0 sm:items-center">
+        <div className="order-3 mx-auto flex w-full max-w-md flex-col items-center sm:mx-0 sm:items-center lg:-mt-[50px]">
           <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-center sm:justify-center sm:gap-3 sm:text-center">
             <div className="flex" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
