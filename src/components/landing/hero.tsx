@@ -42,7 +42,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="order-3">
+        <div className="order-3 mx-auto flex w-full max-w-md flex-col items-center sm:mx-0 sm:items-start">
           <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:gap-3 sm:text-left">
             <div className="flex" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -55,14 +55,14 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="mt-6 max-w-md">
+          <div className="mt-6 w-full">
             <CtaButton href="#avaliacoes" />
             <p className="mt-2 text-center text-xs text-muted-foreground">
               {PRODUTO.preco} à vista ou {PRODUTO.parcelas} no cartão
             </p>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 w-full">
             <TrustRow />
           </div>
         </div>
