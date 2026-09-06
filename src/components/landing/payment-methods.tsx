@@ -20,7 +20,7 @@ function CardShell({
 function VisaIcon({ className }: { className?: string }) {
   return (
     <CardShell className={className}>
-      <svg viewBox="0 0 40 12" className="h-3.5 w-auto" aria-hidden="true">
+      <svg viewBox="0 0 40 12" className="h-4 w-auto" aria-hidden="true">
         <text
           x="20"
           y="9.5"
