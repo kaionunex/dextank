@@ -410,8 +410,8 @@ export function Reviews() {
             </div>
           </div>
           {/* Desktop/tablet: layout horizontal */}
-          <div className="relative hidden items-center gap-8 rounded-2xl bg-surface px-8 py-6 shadow-lg md:flex">
-            <div className="shrink-0">
+          <div className="relative hidden items-center gap-12 rounded-2xl bg-surface px-10 py-6 shadow-lg md:flex">
+            <div className="flex shrink-0 flex-col items-center text-center">
               <p className="font-display text-6xl leading-none text-foreground">{PRODUTO.nota}</p>
               <div className="mt-2">
                 <Stars n={5} />
@@ -420,14 +420,14 @@ export function Reviews() {
                 {PRODUTO.avaliacoes} avaliações
               </p>
             </div>
-            <div className="min-w-0 flex-1 space-y-1.5 border-x border-border/30 px-8">
+            <div className="flex min-w-0 flex-1 flex-col justify-center space-y-3 border-x border-border/30 px-10">
               {distribuicao.map(([estrelas, pct]) => (
                 <div key={estrelas} className="flex items-center gap-3 text-xs text-muted-foreground">
+                  <Star className="h-3 w-3 shrink-0 fill-primary text-primary" aria-hidden="true" />
                   <span className="w-3 shrink-0 tabular-nums">{estrelas}</span>
                   <div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-muted">
                     <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
                   </div>
-                  <span className="w-8 shrink-0 text-right tabular-nums">{pct}%</span>
                 </div>
               ))}
             </div>
