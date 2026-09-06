@@ -80,7 +80,7 @@ export function SocialProof() {
   return (
     <div
       aria-live="polite"
-      className={`pointer-events-none fixed bottom-[90px] left-3 z-40 max-w-[19rem] transition-all duration-500 sm:bottom-[90px] sm:left-5 lg:bottom-5 ${
+      className={`pointer-events-none fixed bottom-[110px] left-3 z-40 max-w-[19rem] transition-all duration-500 sm:bottom-[110px] sm:left-5 lg:bottom-5 ${
         visivel ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
@@ -98,9 +98,8 @@ export function SocialProof() {
           </p>
           <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
             <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-success" aria-hidden="true" />
-            Acabou de comprar o Dex Tank
+            acabou de comprar{aviso.tempo === "agora mesmo" ? "" : ` ${aviso.tempo}`}
           </p>
-          <p className="mt-0.5 text-[11px] text-muted-foreground/70">{aviso.tempo}</p>
         </div>
         <button
           type="button"
