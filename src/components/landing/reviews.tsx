@@ -410,8 +410,8 @@ export function Reviews() {
             </div>
           </div>
           {/* Desktop/tablet: layout horizontal */}
-          <div className="relative hidden items-center gap-12 rounded-2xl bg-surface px-10 py-6 shadow-lg md:flex">
-            <div className="flex shrink-0 flex-col items-center text-center">
+          <div className="relative hidden grid-cols-3 items-center gap-10 rounded-2xl bg-surface px-10 py-6 shadow-lg md:grid">
+            <div className="flex flex-col items-center text-center">
               <p className="font-display text-6xl leading-none text-foreground">{PRODUTO.nota}</p>
               <div className="mt-2">
                 <Stars n={5} />
@@ -420,9 +420,9 @@ export function Reviews() {
                 {PRODUTO.avaliacoes} avaliações
               </p>
             </div>
-            <div className="flex min-w-0 flex-1 flex-col justify-center space-y-3 border-x border-border/30 px-10">
+            <div className="flex flex-col justify-center space-y-1.5 border-x border-border/30 px-6">
               {distribuicao.map(([estrelas, pct]) => (
-                <div key={estrelas} className="flex items-center gap-3 text-xs text-muted-foreground">
+                <div key={estrelas} className="flex items-center gap-2 text-xs text-muted-foreground">
                   <Star className="h-3 w-3 shrink-0 fill-primary text-primary" aria-hidden="true" />
                   <span className="w-3 shrink-0 tabular-nums">{estrelas}</span>
                   <div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-muted">
@@ -431,7 +431,7 @@ export function Reviews() {
                 </div>
               ))}
             </div>
-            <div className="flex shrink-0 flex-col gap-3">
+            <div className="flex flex-col items-center gap-3">
               <div className="flex items-center gap-3">
                 <BadgeCheck className="h-7 w-7 shrink-0 text-success" aria-hidden="true" />
                 <div>
