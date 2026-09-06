@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Star, BadgeCheck, ChevronDown } from "lucide-react";
+import { Star, BadgeCheck, ChevronDown, ShieldCheck } from "lucide-react";
 import cliente1 from "@/assets/cliente-1.jpg";
 import cliente2 from "@/assets/cliente-2.jpg";
 import cliente3 from "@/assets/cliente-3.jpg";
@@ -370,24 +370,43 @@ export function Reviews() {
           Quem já instalou <span className="text-primary">aprova</span>
         </h2>
 
-        <div className="mt-8 grid grid-cols-[auto_1fr] gap-6 rounded-xl bg-surface p-6 items-center">
-          <div className="text-center">
-            <p className="font-display text-5xl text-foreground">{PRODUTO.nota}</p>
-            <div className="mt-1 flex justify-center">
-              <Stars n={5} />
-            </div>
-            <p className="mt-1 text-xs text-muted-foreground">{PRODUTO.avaliacoes} avaliações</p>
-          </div>
-          <div className="space-y-1.5">
-            {distribuicao.map(([estrelas, pct]) => (
-              <div key={estrelas} className="flex items-center gap-3 text-xs text-muted-foreground">
-                <span className="w-8 tabular-nums">{estrelas}★</span>
-                <div className="h-2 flex-1 overflow-hidden rounded bg-muted">
-                  <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
+        <div className="relative mt-8">
+          <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
+          <div className="relative rounded-2xl border border-border bg-surface p-6 shadow-lg">
+            <div className="grid grid-cols-[auto_1fr] items-center gap-6">
+              <div className="text-center">
+                <p className="font-display text-5xl text-primary">{PRODUTO.nota}</p>
+                <div className="mt-1 flex justify-center">
+                  <Stars n={5} />
                 </div>
-                <span className="w-8 text-right tabular-nums">{pct}%</span>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  {PRODUTO.avaliacoes} avaliações
+                </p>
               </div>
-            ))}
+              <div className="space-y-2">
+                {distribuicao.map(([estrelas, pct]) => (
+                  <div key={estrelas} className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="w-4 tabular-nums">{estrelas}★</span>
+                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                      <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+              <div className="inline-flex items-center gap-2 text-sm font-semibold text-success">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" aria-hidden="true" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success" aria-hidden="true" />
+                </span>
+                {PRODUTO.recomendam}% Recomendam
+              </div>
+              <div className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                Compra Garantida
+              </div>
+            </div>
           </div>
         </div>
 
