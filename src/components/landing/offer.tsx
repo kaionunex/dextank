@@ -106,7 +106,7 @@ export function Offer() {
 
 export function Guarantee() {
   return (
-    <section className="py-20">
+    <section className="py-16">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 text-center">
         <div className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-success/10 ring-2 ring-success/30">
           <ShieldCheck className="h-10 w-10 text-success" aria-hidden="true" />
