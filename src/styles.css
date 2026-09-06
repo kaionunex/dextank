@@ -198,3 +198,26 @@
     pointer-events: none;
   }
 }
+
+/* Brilho de hover nos CTAs — luz que varre o botão */
+@utility cta-shine {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      oklch(1 0 0 / 25%) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+  }
+  &:hover::before {
+    transform: translateX(100%);
+  }
+}
