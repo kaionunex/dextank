@@ -19,7 +19,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface pb-24 pt-12 lg:pb-12">
+    <footer className="bg-surface pb-24 pt-12 lg:pb-12">
       <div className="mx-auto max-w-5xl space-y-6 px-4 text-sm text-muted-foreground">
         <div className="grid gap-6 sm:grid-cols-3">
           <div>
@@ -75,7 +75,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="space-y-3 border-t border-border pt-6 text-xs leading-relaxed text-muted-foreground">
+        <div className="space-y-3 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>
             O Dex Tank é um acessório desenvolvido como melhoria para o bocal do tanque, fabricado
             pela marca Dex e comercializado por {EMPRESA.razaoSocial}. Não é um produto original
