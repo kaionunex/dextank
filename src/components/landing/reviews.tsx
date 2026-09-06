@@ -431,7 +431,7 @@ export function Reviews() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col items-start gap-3 pl-5">
+            <div className="flex flex-col items-start gap-3 pl-4">
               <div className="flex items-center gap-3">
                 <BadgeCheck className="h-7 w-7 shrink-0 text-success" aria-hidden="true" />
                 <div>
