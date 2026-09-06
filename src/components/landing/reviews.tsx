@@ -370,15 +370,16 @@ export function Reviews() {
           Quem já instalou <span className="text-primary">aprova</span>
         </h2>
 
-        <div className="mt-8 grid gap-6 rounded-xl bg-surface p-6 sm:grid-cols-[auto_1fr] sm:items-center">
+        <div className="mt-8 grid grid-cols-[auto_1fr] gap-6 rounded-xl bg-surface p-6 items-center">
           <div className="text-center">
             <p className="font-display text-5xl text-foreground">
-              {PRODUTO.nota.toString().replace(".", ",")}
+              {PRODUTO.nota.toString().replace(".", ",")}{" "}
+              <span className="text-2xl text-muted-foreground">de 5</span>
             </p>
             <div className="mt-1 flex justify-center">
               <Stars n={5} />
             </div>
-            <p className="mt-1 text-xs text-muted-foreground">382 a0avaliações</p>
+            <p className="mt-1 text-xs text-muted-foreground">{PRODUTO.avaliacoes} avaliações</p>
           </div>
           <div className="space-y-1.5">
             {distribuicao.map(([estrelas, pct]) => (
