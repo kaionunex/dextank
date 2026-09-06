@@ -7,6 +7,7 @@ import { VideoInstall } from "@/components/landing/video-install";
 import { Reviews } from "@/components/landing/reviews";
 import { Offer, Guarantee, Faq, FinalCta } from "@/components/landing/offer";
 import { Footer } from "@/components/landing/footer";
+import { SocialProof } from "@/components/landing/social-proof";
 import { EMPRESA, FAQ, PRODUTO } from "@/lib/landing";
 
 const TITULO = "Dex Tank: Adaptador de Bocal de Tanque para Yamaha FZ15 | Compra Segura";
@@ -84,6 +85,7 @@ function Index() {
       </main>
       <Footer />
       <StickyBuy />
+      <SocialProof />
     </div>
   );
 }
