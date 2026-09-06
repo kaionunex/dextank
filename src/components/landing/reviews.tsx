@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Star, BadgeCheck, ChevronDown } from "lucide-react";
+import { Star, BadgeCheck, ChevronDown, ShieldCheck } from "lucide-react";
 import cliente1 from "@/assets/cliente-1.jpg";
 import cliente2 from "@/assets/cliente-2.jpg";
 import cliente3 from "@/assets/cliente-3.jpg";

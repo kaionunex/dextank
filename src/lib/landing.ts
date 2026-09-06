@@ -20,6 +20,7 @@ export const PRODUTO = {
   nota: 4.9,
   compradores: 1287,
   avaliacoes: 428,
+  recomendam: 98,
 };
 
 export const EMPRESA = {
