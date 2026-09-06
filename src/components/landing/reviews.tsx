@@ -432,7 +432,7 @@ export function Reviews() {
               ))}
             </div>
             <div className="flex shrink-0 flex-col gap-3">
-              <div className="flex items-center gap-3 rounded-xl border border-success/30 bg-success/10 px-4 py-3">
+              <div className="flex items-center gap-3">
                 <BadgeCheck className="h-7 w-7 shrink-0 text-success" aria-hidden="true" />
                 <div>
                   <p className="text-lg font-bold leading-none text-foreground">{PRODUTO.recomendam}%</p>
@@ -441,7 +441,7 @@ export function Reviews() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 rounded-xl border border-primary/30 bg-primary/10 px-4 py-3">
+              <div className="flex items-center gap-3">
                 <ShieldCheck className="h-7 w-7 shrink-0 text-primary" aria-hidden="true" />
                 <div>
                   <p className="text-sm font-bold leading-none text-foreground">Compra Garantida</p>
