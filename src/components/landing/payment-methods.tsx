@@ -1,3 +1,5 @@
+import pixLogo from "@/assets/pix-logo.png.asset.json";
+
 function CardShell({
   children,
   className,
@@ -8,7 +10,7 @@ function CardShell({
   return (
     <span
       className={
-        "inline-flex h-5 items-center justify-center rounded bg-muted px-1.5 text-muted-foreground " +
+        "inline-flex h-5 w-8 items-center justify-center rounded bg-muted text-muted-foreground " +
         (className || "")
       }
     >
@@ -86,25 +88,14 @@ function EloIcon({ className }: { className?: string }) {
   );
 }
 
-function HipercardIcon({ className }: { className?: string }) {
-  return (
-    <CardShell className={className}>
-      <svg viewBox="0 0 34 12" className="h-3 w-auto" aria-hidden="true">
-        <path
-          d="M6 2h3v8H6V2zm4 0h1.5L14 7.5 16.5 2H18v8h-3V5.5L13 10h-1L10 5.5V10H7V2h3zm9 0h3v8h-3V2zm4 0h1.5L26.5 7.5 29 2h1.5v8h-3V5.5L25 10h-1l-2-4.5V10h-3V2h.5z"
-          fill="currentColor"
-        />
-      </svg>
-    </CardShell>
-  );
-}
-
 function PixIcon({ className }: { className?: string }) {
   return (
     <CardShell className={className}>
-      <svg viewBox="0 0 12 12" className="h-3 w-auto" aria-hidden="true" fill="currentColor">
-        <path d="M6.65 1.35 6 2l-.65-.65a1.5 1.5 0 0 0-2.12 0L1.35 3.23a1.5 1.5 0 0 0 0 2.12L2 6l-.65.65a1.5 1.5 0 0 0 0 2.12l1.88 1.88a1.5 1.5 0 0 0 2.12 0L6 10l.65.65a1.5 1.5 0 0 0 2.12 0l1.88-1.88a1.5 1.5 0 0 0 0-2.12L10 6l.65-.65a1.5 1.5 0 0 0 0-2.12L8.77 1.35a1.5 1.5 0 0 0-2.12 0ZM6 4.24 7.76 6 6 7.76 4.24 6 6 4.24Z" />
-      </svg>
+      <img
+        src={pixLogo.url}
+        alt="Pix"
+        className="h-3.5 w-auto"
+      />
     </CardShell>
   );
 }
@@ -128,7 +119,6 @@ export function PaymentMethods({ className }: { className?: string }) {
         <MastercardIcon />
         <AmexIcon />
         <EloIcon />
-        <HipercardIcon />
         <PixIcon />
         <BoletoIcon />
       </div>
