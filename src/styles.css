@@ -43,6 +43,7 @@
   --color-ring-offset-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
+  --color-section-alt: var(--section-alt);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
