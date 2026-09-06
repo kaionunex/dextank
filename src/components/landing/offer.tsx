@@ -17,7 +17,7 @@ export function Offer() {
   return (
     <section className="py-20" id="oferta">
       <div className="mx-auto max-w-4xl px-4">
-        <div className="relative grid gap-8 rounded-2xl bg-surface p-8 sm:p-10 md:grid-cols-2 md:items-center">
+        <div className="relative grid gap-8 rounded-2xl bg-surface px-[62px] pb-[62px] pt-[52px] sm:px-[70px] sm:pb-[70px] sm:pt-[60px] md:grid-cols-2 md:items-center">
           <span className="absolute -top-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-md bg-destructive px-4 py-1.5 font-display text-sm uppercase tracking-widest text-destructive-foreground shadow-lg">
             <Flame className="h-4 w-4" aria-hidden="true" /> Oferta de lançamento
           </span>
@@ -106,7 +106,7 @@ export function Offer() {
 
 export function Guarantee() {
   return (
-    <section className="py-16">
+    <section className="pt-[34px] pb-16">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 text-center">
         <div className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-success/10 ring-2 ring-success/30">
           <ShieldCheck className="h-10 w-10 text-success" aria-hidden="true" />
