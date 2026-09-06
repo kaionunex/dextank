@@ -410,8 +410,8 @@ export function Reviews() {
             </div>
           </div>
           {/* Desktop/tablet: layout horizontal */}
-          <div className="relative hidden grid-cols-[1fr_auto_2fr_auto_1fr] items-center gap-8 rounded-2xl bg-surface px-6 py-6 shadow-lg md:grid lg:gap-12 lg:px-10">
-            <div className="flex flex-col items-center text-center">
+          <div className="relative hidden items-center justify-between gap-8 rounded-2xl bg-surface px-6 py-6 shadow-lg md:flex lg:gap-12 lg:px-10">
+            <div className="flex shrink-0 flex-col items-center text-center">
               <p className="font-display text-6xl leading-none text-foreground">{PRODUTO.nota}</p>
               <div className="mt-2">
                 <Stars n={5} />
@@ -420,8 +420,8 @@ export function Reviews() {
                 {PRODUTO.avaliacoes} avaliações
               </p>
             </div>
-            <div className="h-24 w-px bg-border/30" aria-hidden="true" />
-            <div className="flex w-full flex-col items-center justify-center space-y-1">
+            <div className="h-24 w-px shrink-0 bg-border/30" aria-hidden="true" />
+            <div className="flex w-[320px] flex-col items-center justify-center space-y-1 lg:w-[440px]">
               {distribuicao.map(([estrelas, pct]) => (
                 <div key={estrelas} className="flex w-full items-center gap-2 text-xs text-muted-foreground">
                   <span className="w-3 shrink-0 tabular-nums">{estrelas}</span>
@@ -432,8 +432,8 @@ export function Reviews() {
                 </div>
               ))}
             </div>
-            <div className="h-24 w-px bg-border/30" aria-hidden="true" />
-            <div className="flex flex-col items-start gap-3">
+            <div className="h-24 w-px shrink-0 bg-border/30" aria-hidden="true" />
+            <div className="flex shrink-0 flex-col items-start gap-3">
               <div className="flex items-center gap-3">
                 <BadgeCheck className="h-7 w-7 shrink-0 text-success" aria-hidden="true" />
                 <div>
