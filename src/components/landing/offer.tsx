@@ -8,6 +8,7 @@ import { CreditCard, Flame, Lock, ShieldCheck, Timer, Truck } from "lucide-react
 import produto from "@/assets/produto-isolado.png";
 import { CtaButton, useCountdown, useEstoque } from "./cta";
 import { FAQ, PRODUTO } from "@/lib/landing";
+import { PaymentMethods } from "./payment-methods";
 
 export function Offer() {
   const time = useCountdown();
