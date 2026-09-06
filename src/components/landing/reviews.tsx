@@ -373,7 +373,8 @@ export function Reviews() {
         <div className="mt-8 grid grid-cols-[auto_1fr] gap-6 rounded-xl bg-surface p-6 items-center">
           <div className="text-center">
             <p className="font-display text-5xl text-foreground">
-              {PRODUTO.nota.toString().replace(".", ",")}
+              {PRODUTO.nota.toString().replace(".", ",")}{" "}
+              <span className="text-2xl text-muted-foreground">de 5</span>
             </p>
             <div className="mt-1 flex justify-center">
               <Stars n={5} />
