@@ -6,7 +6,7 @@ import { PRODUTO } from "@/lib/landing";
 export function Hero() {
   return (
     <header className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-0 pt-10 lg:grid-cols-2 lg:grid-rows-2 lg:pb-0 lg:pt-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 -mb-8 pb-0 pt-10 lg:grid-cols-2 lg:grid-rows-2 lg:-mb-8 lg:pb-0 lg:pt-16">
         <div className="order-1">
           <span className="mb-3 inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1 font-display text-xs uppercase tracking-widest text-destructive-foreground">
             Oferta de lançamento
