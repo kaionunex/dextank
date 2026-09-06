@@ -15,7 +15,7 @@ export function Offer() {
   const estoque = useEstoque();
   const pct = Math.round((estoque / PRODUTO.estoqueTotal) * 100);
   return (
-    <section className="py-20" id="oferta">
+    <section className="py-20 pb-[50px]" id="oferta">
       <div className="mx-auto max-w-4xl px-4">
         <div className="relative grid gap-8 rounded-2xl bg-surface p-6 pb-[44px] sm:p-8 sm:pb-[52px] md:grid-cols-2 md:items-center">
           <span className="absolute -top-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-md bg-destructive px-4 py-1.5 font-display text-sm uppercase tracking-widest text-destructive-foreground shadow-lg">
