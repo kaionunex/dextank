@@ -403,7 +403,7 @@ export function Reviews() {
             {/* Selos */}
             <div className="mt-5 flex flex-col justify-between gap-4 border-t border-border/30 pt-5 md:mt-0 md:border-l md:border-t-0 md:pl-10 md:pt-0 lg:pl-16">
               <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-success/20 bg-success/10">
+                <div className="grid h-6 w-6 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-success/20 md:bg-success/10">
                   <BadgeCheck className="h-6 w-6 text-success" aria-hidden="true" />
                 </div>
                 <div>
@@ -412,7 +412,7 @@ export function Reviews() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-primary/20 bg-primary/10">
+                <div className="grid h-6 w-6 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-primary/20 md:bg-primary/10">
                   <ShieldCheck className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
                 <div>
