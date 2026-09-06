@@ -14,7 +14,7 @@ import {
 type Aviso = { nome: string; local: string; tempo: string };
 
 const PRIMEIRO_DELAY = 6000;
-const VISIVEL_MS = 6000;
+const VISIVEL_MS = 8000;
 
 export function SocialProof() {
   const [aviso, setAviso] = useState<Aviso | null>(null);
