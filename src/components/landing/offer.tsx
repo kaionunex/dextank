@@ -64,7 +64,7 @@ export function Offer() {
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span>
                     Restam <strong className="text-foreground tabular-nums">{estoque}</strong>{" "}
-                    unidades do lote
+                    unidades em estoque
                   </span>
                   <span className="tabular-nums">{pct}% restante</span>
                 </div>
