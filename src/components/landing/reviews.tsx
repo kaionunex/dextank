@@ -370,58 +370,55 @@ export function Reviews() {
           Quem já instalou <span className="text-primary">aprova</span>
         </h2>
 
-        <div className="relative mt-8">
-          <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
-          <div className="relative flex flex-col rounded-2xl bg-surface p-6 shadow-lg md:flex-row md:items-stretch md:gap-6 md:px-11 lg:gap-10">
-            {/* Mobile: Nota + Distribuição lado a lado; Desktop: 3 colunas */}
-            <div className="flex flex-row gap-4 md:contents">
-              {/* Nota */}
-              <div className="flex w-[120px] shrink-0 flex-col items-center justify-center text-center md:w-auto md:border-r md:border-border/50 md:pr-6 lg:pr-10">
-                <p className="font-display text-6xl text-foreground">{PRODUTO.nota}</p>
-                <div className="mt-1 flex justify-center">
-                  <Stars n={5} />
-                </div>
-                <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground">
-                  {PRODUTO.avaliacoes} avaliações
-                </p>
+        <div className="mt-8 flex flex-col md:flex-row md:items-stretch md:gap-10 md:px-[50px] lg:gap-16">
+          {/* Mobile: Nota + Distribuição lado a lado; Desktop: 3 colunas */}
+          <div className="flex flex-row gap-3 md:contents">
+            {/* Nota */}
+            <div className="flex w-[110px] shrink-0 flex-col items-center justify-center text-center md:w-auto md:border-r md:border-border/50 md:pr-8 lg:pr-14">
+              <p className="font-display text-6xl text-foreground">{PRODUTO.nota}</p>
+              <div className="mt-1 flex justify-center">
+                <Stars n={5} />
               </div>
-
-              {/* Distribuição */}
-              <div className="flex-1 space-y-1.5 md:flex-1">
-                {distribuicao.map(([estrelas, pct]) => (
-                  <div key={estrelas} className="flex items-center gap-3 text-xs text-muted-foreground">
-                    <span className="w-3 tabular-nums font-bold">{estrelas}</span>
-                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted md:h-2">
-                      <div
-                        className="h-full rounded-full bg-primary"
-                        style={{ width: `${pct}%`, opacity: pct > 10 ? 1 : 0.6 }}
-                      />
-                    </div>
-                    <span className="w-8 text-right tabular-nums">{pct}%</span>
-                  </div>
-                ))}
-              </div>
+              <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground">
+                {PRODUTO.avaliacoes} avaliações
+              </p>
             </div>
 
-            {/* Selos */}
-            <div className="mt-5 flex flex-row justify-between gap-3 border-t border-border/30 pt-5 md:mt-0 md:flex-col md:justify-between md:border-l md:border-t-0 md:pl-6 md:pt-0 lg:pl-10">
-              <div className="flex items-center gap-3">
-                <div className="grid h-7 w-7 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-success/20 md:bg-success/10">
-                  <BadgeCheck className="h-7 w-7 text-success md:h-6 md:w-6" aria-hidden="true" />
+            {/* Distribuição */}
+            <div className="max-w-[200px] flex-1 space-y-1 md:w-[360px] md:max-w-none md:flex-none md:space-y-1.5">
+              {distribuicao.map(([estrelas, pct]) => (
+                <div key={estrelas} className="flex items-center gap-2 text-xs text-muted-foreground md:gap-3">
+                  <span className="w-3 tabular-nums font-bold">{estrelas}</span>
+                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                    <div
+                      className="h-full rounded-full bg-primary"
+                      style={{ width: `${pct}%`, opacity: pct > 10 ? 1 : 0.6 }}
+                    />
+                  </div>
+                  <span className="w-8 text-right tabular-nums">{pct}%</span>
                 </div>
-                <div>
-                  <div className="text-xl font-bold leading-none text-foreground">{PRODUTO.recomendam}%</div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Recomendam</div>
-                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Selos */}
+          <div className="mt-4 flex flex-row justify-between gap-3 border-t border-border/30 pt-4 md:mt-0 md:flex-col md:justify-between md:border-l md:border-t-0 md:pl-8 md:pt-0 lg:pl-14">
+            <div className="flex items-center gap-3">
+              <div className="grid h-7 w-7 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-success/20 md:bg-success/10">
+                <BadgeCheck className="h-7 w-7 text-success md:h-6 md:w-6" aria-hidden="true" />
               </div>
-              <div className="flex items-center gap-3">
-                <div className="grid h-7 w-7 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-primary/20 md:bg-primary/10">
-                  <ShieldCheck className="h-7 w-7 text-primary md:h-6 md:w-6" aria-hidden="true" />
-                </div>
-                <div>
-                  <div className="text-[13px] font-bold leading-none text-foreground">Compra Garantida</div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Satisfação Total</div>
-                </div>
+              <div>
+                <div className="text-xl font-bold leading-none text-foreground">{PRODUTO.recomendam}%</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Recomendam</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="grid h-7 w-7 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-primary/20 md:bg-primary/10">
+                <ShieldCheck className="h-7 w-7 text-primary md:h-6 md:w-6" aria-hidden="true" />
+              </div>
+              <div>
+                <div className="text-[13px] font-bold leading-none text-foreground">Compra Garantida</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Satisfação Total</div>
               </div>
             </div>
           </div>
