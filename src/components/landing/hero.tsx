@@ -43,7 +43,7 @@ export function Hero() {
         </div>
 
         <div className="order-3 lg:-mt-[104px] lg:mx-auto lg:max-w-md">
-          <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:gap-3 sm:text-left">
+          <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:gap-3">
             <div className="flex" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-5 w-5 fill-primary text-primary" />
