@@ -29,7 +29,7 @@ export function Offer() {
             loading="lazy"
             className="mx-auto w-56 md:w-full"
           />
-          <div className="pt-5">
+          <div className="pt-0 md:pt-5">
             <h2 className="font-display text-2xl text-foreground sm:text-3xl">
               Dex Tank — Adaptador Articulado do Bocal
             </h2>
