@@ -410,7 +410,7 @@ export function Reviews() {
             </div>
           </div>
           {/* Desktop/tablet: layout horizontal */}
-          <div className="relative hidden items-center justify-between gap-8 rounded-2xl bg-surface px-8 py-6 shadow-lg md:flex lg:gap-12 lg:px-14">
+          <div className="relative hidden items-center justify-between gap-8 rounded-2xl bg-surface px-10 py-6 shadow-lg md:flex lg:gap-12 lg:px-20">
             <div className="flex shrink-0 flex-col items-center text-center">
               <p className="font-display text-6xl leading-none text-foreground">{PRODUTO.nota}</p>
               <div className="mt-2">
