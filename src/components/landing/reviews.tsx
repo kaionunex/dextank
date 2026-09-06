@@ -410,7 +410,7 @@ export function Reviews() {
             </div>
           </div>
           {/* Desktop/tablet: layout horizontal */}
-          <div className="relative hidden grid-cols-[1fr_1.5fr_1.5fr] items-center gap-0 rounded-2xl bg-surface px-10 py-6 shadow-lg md:grid lg:grid-cols-[1fr_2fr_1fr]">
+          <div className="relative hidden grid-cols-[1.4fr_1.2fr_1.4fr] items-center gap-0 rounded-2xl bg-surface px-10 py-6 shadow-lg md:grid lg:grid-cols-[1.5fr_1fr_1.5fr]">
             <div className="flex flex-col items-center pr-5 text-center">
               <p className="font-display text-6xl leading-none text-foreground">{PRODUTO.nota}</p>
               <div className="mt-2">
@@ -422,7 +422,7 @@ export function Reviews() {
             </div>
             <div className="flex flex-col items-center justify-center space-y-1 border-x border-border/30 px-5">
               {distribuicao.map(([estrelas, pct]) => (
-                <div key={estrelas} className="flex w-full max-w-[220px] items-center gap-2 text-xs text-muted-foreground">
+                <div key={estrelas} className="flex w-full items-center gap-2 text-xs text-muted-foreground">
                   <span className="w-3 shrink-0 tabular-nums">{estrelas}</span>
                   <Star className="h-3 w-3 shrink-0 fill-primary text-primary" aria-hidden="true" />
                   <div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-muted">
