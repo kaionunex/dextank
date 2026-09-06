@@ -98,9 +98,8 @@ export function SocialProof() {
           </p>
           <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
             <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-success" aria-hidden="true" />
-            Acabou de comprar o Dex Tank
+            acabou de comprar{aviso.tempo === "agora mesmo" ? "" : ` ${aviso.tempo}`}
           </p>
-          <p className="mt-0.5 text-[11px] text-muted-foreground/70">{aviso.tempo}</p>
         </div>
         <button
           type="button"
