@@ -3,7 +3,7 @@ function CardShell({
   className,
 }: {
   children: React.ReactNode;
-  className?: string;
+  className?: string | undefined;
 }) {
   return (
     <span
