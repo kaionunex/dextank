@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ShieldCheck, TicketPercent, Truck, Zap } from "lucide-react";
+import { ShieldCheck, TicketPercent, Timer, Truck, Zap } from "lucide-react";
 import { CHECKOUT_URL, MARCA, PRODUTO } from "@/lib/landing";
 import { cn } from "@/lib/utils";
 
@@ -163,10 +163,11 @@ export function TopBar() {
           <Truck className="h-4 w-4" aria-hidden="true" /> Frete grátis para todo o Brasil — só
           hoje
         </span>
-        <span className="inline-flex items-center gap-1.5 rounded bg-background px-2 py-0.5 text-xs text-primary shadow-sm tabular-nums ring-1 ring-primary animate-pulse sm:text-sm">
+        <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-destructive px-2 py-0.5 text-xs font-bold text-destructive-foreground shadow-lg shadow-destructive/30 tabular-nums ring-1 ring-destructive-foreground/20 sm:text-sm">
+          <Timer className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
           <span className="hidden sm:inline">Oferta expira em</span>
           <span className="sm:hidden">Expira em</span>
-          <span className="font-bold tabular-nums">{time}</span>
+          <span className="tabular-nums">{time}</span>
         </span>
       </div>
     </div>
