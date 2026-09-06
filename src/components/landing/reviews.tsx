@@ -372,7 +372,8 @@ export function Reviews() {
 
         <div className="relative mt-8">
           <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
-          <div className="relative rounded-2xl bg-surface p-4 shadow-lg">
+          {/* Mobile: layout empilhado (inalterado) */}
+          <div className="relative rounded-2xl bg-surface p-4 shadow-lg md:hidden">
             <div className="grid grid-cols-[auto_1fr] items-center gap-4">
               <div className="text-center">
                 <p className="font-display text-4xl text-foreground">{PRODUTO.nota}</p>
@@ -405,6 +406,49 @@ export function Reviews() {
               <div className="inline-flex items-center gap-1 text-xs text-muted-foreground">
                 <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
                 Compra Garantida
+              </div>
+            </div>
+          </div>
+          {/* Desktop/tablet: layout horizontal */}
+          <div className="relative hidden items-center gap-8 rounded-2xl bg-surface px-8 py-6 shadow-lg md:flex">
+            <div className="shrink-0">
+              <p className="font-display text-6xl leading-none text-foreground">{PRODUTO.nota}</p>
+              <div className="mt-2">
+                <Stars n={5} />
+              </div>
+              <p className="mt-2 text-xs font-semibold tracking-wider text-muted-foreground">
+                {PRODUTO.avaliacoes} avaliações
+              </p>
+            </div>
+            <div className="min-w-0 flex-1 space-y-1.5 border-x border-border/30 px-8">
+              {distribuicao.map(([estrelas, pct]) => (
+                <div key={estrelas} className="flex items-center gap-3 text-xs text-muted-foreground">
+                  <span className="w-3 shrink-0 tabular-nums">{estrelas}</span>
+                  <div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-muted">
+                    <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
+                  </div>
+                  <span className="w-8 shrink-0 text-right tabular-nums">{pct}%</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex shrink-0 flex-col gap-3">
+              <div className="flex items-center gap-3 rounded-xl border border-success/30 bg-success/10 px-4 py-3">
+                <BadgeCheck className="h-7 w-7 shrink-0 text-success" aria-hidden="true" />
+                <div>
+                  <p className="text-lg font-bold leading-none text-foreground">{PRODUTO.recomendam}%</p>
+                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                    Recomendam
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-xl border border-primary/30 bg-primary/10 px-4 py-3">
+                <ShieldCheck className="h-7 w-7 shrink-0 text-primary" aria-hidden="true" />
+                <div>
+                  <p className="text-sm font-bold leading-none text-foreground">Compra Garantida</p>
+                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                    Satisfação total
+                  </p>
+                </div>
               </div>
             </div>
           </div>
