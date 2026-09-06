@@ -26,7 +26,7 @@ const passos = [
 
 export function Install() {
   return (
-    <section className="border-b border-border py-14" id="instalacao">
+    <section className="bg-section-alt py-14" id="instalacao">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-center font-display text-3xl text-foreground sm:text-4xl">
           Instalação em <span className="text-primary">3 passos</span>
@@ -37,7 +37,7 @@ export function Install() {
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {passos.map((p) => (
-            <article key={p.n} className="overflow-hidden rounded-xl border border-border bg-surface">
+            <article key={p.n} className="overflow-hidden rounded-xl bg-surface">
               <img
                 src={p.img}
                 alt={`Passo ${p.n}: ${p.titulo}`}
@@ -55,7 +55,7 @@ export function Install() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-xl border border-border bg-surface px-5 py-4 text-center">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-xl bg-surface px-5 py-4 text-center">
           <CheckCircle2 className="h-5 w-5 text-success" aria-hidden="true" />
           <p className="text-sm text-muted-foreground">
             <strong className="text-foreground">Compatibilidade garantida:</strong> compatível com
