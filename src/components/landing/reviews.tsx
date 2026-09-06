@@ -370,7 +370,7 @@ export function Reviews() {
           Quem já instalou <span className="text-primary">aprova</span>
         </h2>
 
-        <div className="mt-8 flex flex-col md:flex-row md:items-stretch md:gap-10 md:px-[50px] lg:gap-16">
+        <div className="mt-8 flex flex-col md:flex-row md:items-stretch md:justify-center md:gap-10 md:px-[50px] lg:gap-16">
           {/* Mobile: Nota + Distribuição lado a lado; Desktop: 3 colunas */}
           <div className="flex flex-row gap-3 md:contents">
             {/* Nota */}
@@ -404,18 +404,14 @@ export function Reviews() {
           {/* Selos */}
           <div className="mt-4 flex flex-row justify-between gap-3 border-t border-border/30 pt-4 md:mt-0 md:flex-col md:justify-between md:border-l md:border-t-0 md:pl-8 md:pt-0 lg:pl-14">
             <div className="flex items-center gap-3">
-              <div className="grid h-7 w-7 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-success/20 md:bg-success/10">
-                <BadgeCheck className="h-7 w-7 text-success md:h-6 md:w-6" aria-hidden="true" />
-              </div>
+              <BadgeCheck className="h-7 w-7 shrink-0 text-success" aria-hidden="true" />
               <div>
                 <div className="text-xl font-bold leading-none text-foreground">{PRODUTO.recomendam}%</div>
                 <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Recomendam</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="grid h-7 w-7 shrink-0 place-items-center md:h-12 md:w-12 md:rounded-2xl md:border md:border-primary/20 md:bg-primary/10">
-                <ShieldCheck className="h-7 w-7 text-primary md:h-6 md:w-6" aria-hidden="true" />
-              </div>
+              <ShieldCheck className="h-7 w-7 shrink-0 text-primary" aria-hidden="true" />
               <div>
                 <div className="text-[13px] font-bold leading-none text-foreground">Compra Garantida</div>
                 <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Satisfação Total</div>
