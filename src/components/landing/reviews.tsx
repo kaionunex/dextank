@@ -373,7 +373,7 @@ export function Reviews() {
         <div className="relative mt-8">
           <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
           {/* Mobile: layout empilhado (inalterado) */}
-          <div className="relative rounded-2xl bg-surface p-4 shadow-lg md:hidden">
+          <div className="relative rounded-2xl bg-surface p-4 px-[26px] shadow-lg md:hidden">
             <div className="grid grid-cols-[auto_1fr] items-center gap-6">
               <div className="text-center">
                 <p className="font-display text-4xl text-foreground">{PRODUTO.nota}</p>
