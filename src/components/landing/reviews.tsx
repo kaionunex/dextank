@@ -372,56 +372,39 @@ export function Reviews() {
 
         <div className="relative mt-8">
           <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/0 opacity-50 blur-lg" aria-hidden="true" />
-          <div className="relative flex flex-col rounded-2xl bg-surface p-6 shadow-lg md:flex-row md:items-stretch md:justify-center md:gap-10 md:px-[50px] lg:gap-16">
-            {/* Mobile: Nota + Distribuição lado a lado; Desktop: 3 colunas */}
-            <div className="flex flex-row gap-5 md:contents">
-              {/* Nota */}
-              <div className="flex w-[110px] shrink-0 flex-col items-center justify-center text-center md:w-auto md:border-r md:border-border/50 md:pr-8 lg:pr-14">
-                <p className="font-display text-6xl text-foreground">{PRODUTO.nota}</p>
-                <div className="mt-1 flex justify-center">
+          <div className="relative rounded-2xl bg-surface p-4 shadow-lg">
+            <div className="grid grid-cols-[auto_1fr] items-center gap-4">
+              <div className="text-center">
+                <p className="font-display text-4xl text-foreground">{PRODUTO.nota}</p>
+                <div className="mt-0.5 flex justify-center">
                   <Stars n={5} />
                 </div>
-                <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground">
+                <p className="mt-0.5 text-xs font-semibold tracking-wider text-muted-foreground">
                   {PRODUTO.avaliacoes} avaliações
                 </p>
               </div>
-
-              {/* Distribuição */}
-              <div className="max-w-[170px] flex-1 space-y-1 md:w-[360px] md:max-w-none md:flex-none md:space-y-1.5">
+              <div className="max-w-[260px] space-y-0.5">
                 {distribuicao.map(([estrelas, pct]) => (
-                  <div key={estrelas} className="flex items-center gap-2 text-xs text-muted-foreground md:gap-3">
-                    <span className="flex w-7 items-center gap-1 tabular-nums font-bold">
-                      {estrelas}
-                      <Star className="h-3 w-3 fill-primary text-primary" aria-hidden="true" />
-                    </span>
+                  <div key={estrelas} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <span className="w-3 tabular-nums">{estrelas}</span>
                     <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
-                      <div
-                        className="h-full rounded-full bg-primary"
-                        style={{ width: `${pct}%`, opacity: pct > 10 ? 1 : 0.6 }}
-                      />
+                      <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Selos */}
-            <div className="mt-4 flex flex-row justify-between gap-3 border-t border-border/30 pt-4 md:mt-0 md:flex-col md:justify-start md:gap-2 md:border-l md:border-t-0 md:pl-8 md:pt-0 lg:pl-14">
-              <div className="flex items-center gap-3">
-                <BadgeCheck className="h-5 w-5 shrink-0 animate-pulse text-success" aria-hidden="true" />
-                <span className="text-xs font-bold text-success md:hidden">{PRODUTO.recomendam}% Recomendam</span>
-                <div className="hidden md:flex md:flex-col md:items-start">
-                  <span className="text-xs font-bold text-muted-foreground">{PRODUTO.recomendam}%</span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Recomendam</span>
-                </div>
+            <div className="mt-3 flex items-center justify-between border-t border-border/30 pt-2.5">
+              <div className="inline-flex items-center gap-2 text-sm font-semibold text-success">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" aria-hidden="true" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success" aria-hidden="true" />
+                </span>
+                {PRODUTO.recomendam}% Recomendam
               </div>
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
-                <span className="text-xs font-bold text-muted-foreground md:hidden">Compra Garantida</span>
-                <div className="hidden md:flex md:flex-col md:items-start">
-                  <span className="text-xs font-bold text-muted-foreground">Compra Garantida</span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Satisfação Total</span>
-                </div>
+              <div className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                Compra Garantida
               </div>
             </div>
           </div>
