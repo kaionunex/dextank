@@ -75,8 +75,14 @@ export function Offer() {
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span>
-                    Restam <strong className="text-foreground tabular-nums">{estoque}</strong>{" "}
-                    unidades em estoque
+                    {expirado ? (
+                      "Estoque do lote de lançamento"
+                    ) : (
+                      <>
+                        Restam <strong className="text-foreground tabular-nums">{estoque}</strong>{" "}
+                        unidades em estoque
+                      </>
+                    )}
                   </span>
                   <span className="tabular-nums">{pct}% restante</span>
                 </div>
