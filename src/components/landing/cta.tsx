@@ -63,20 +63,29 @@ function readDeadline(): number {
 
 export function useCountdown(minutes = 14) {
   const [left, setLeft] = useState(minutes * 60);
+  const [pronto, setPronto] = useState(false);
   useEffect(() => {
-    const deadline = readDeadline();
+    let deadline: number;
+    const override = new URLSearchParams(window.location.search).get("timer");
+    const segundos = Number(override);
+    if (override !== null && Number.isFinite(segundos) && segundos >= 0) {
+      deadline = Date.now() + segundos * 1000;
+    } else {
+      deadline = readDeadline();
+    }
     const tick = () => setLeft(Math.max(0, Math.floor((deadline - Date.now()) / 1000)));
     tick();
+    setPronto(true);
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, []);
   const mm = String(Math.floor(left / 60)).padStart(2, "0");
   const ss = String(left % 60).padStart(2, "0");
-  return `${mm}:${ss}`;
+  return { time: `${mm}:${ss}`, expirado: pronto && left <= 0 };
 }
 
 const STOCK_KEY = "dextank_stock";
-const STOCK_MIN = 12;
+const STOCK_MIN = 9;
 const STOCK_INTERVAL_MIN_MS = 20 * 1000;
 const STOCK_INTERVAL_MAX_MS = 30 * 1000;
 
@@ -123,39 +132,71 @@ function randomDelay() {
   );
 }
 
-/** Estoque em estoque que vai caindo sozinho, com persistência no navegador. */
+/** Store único: todos os pontos da página mostram o mesmo número de estoque. */
+let estoqueAtual = PRODUTO.estoqueLote;
+let estoqueTimeout: ReturnType<typeof setTimeout> | null = null;
+const estoqueListeners = new Set<(v: number) => void>();
+
+function iniciarEstoque() {
+  const state = readStock();
+  estoqueAtual = state.valor;
+  estoqueListeners.forEach((l) => l(estoqueAtual));
+
+  const schedule = () => {
+    estoqueTimeout = setTimeout(() => {
+      if (estoqueAtual > STOCK_MIN) {
+        let proximo = Math.max(STOCK_MIN, estoqueAtual - randomStep());
+        if (proximo === 13) proximo = STOCK_MIN; // nunca exibir 13
+        estoqueAtual = proximo;
+        saveStock({ valor: proximo, inicio: state.inicio });
+        estoqueListeners.forEach((l) => l(proximo));
+      }
+      schedule();
+    }, randomDelay());
+  };
+
+  schedule();
+}
+
+/** Estoque que vai caindo sozinho, com persistência no navegador. */
 export function useEstoque() {
   const [estoque, setEstoque] = useState(PRODUTO.estoqueLote);
 
   useEffect(() => {
-    const state = readStock();
-    setEstoque(state.valor);
+    const primeiro = estoqueListeners.size === 0;
+    estoqueListeners.add(setEstoque);
+    if (primeiro) iniciarEstoque();
+    else setEstoque(estoqueAtual);
 
-    let timeoutId: ReturnType<typeof setTimeout>;
-
-    const schedule = () => {
-      timeoutId = setTimeout(() => {
-        setEstoque((atual) => {
-          if (atual <= STOCK_MIN) return atual;
-          let proximo = Math.max(STOCK_MIN, atual - randomStep());
-          if (proximo === 13) proximo = STOCK_MIN; // nunca exibir 13
-          saveStock({ valor: proximo, inicio: state.inicio });
-          return proximo;
-        });
-        schedule();
-      }, randomDelay());
+    return () => {
+      estoqueListeners.delete(setEstoque);
+      if (estoqueListeners.size === 0 && estoqueTimeout) {
+        clearTimeout(estoqueTimeout);
+        estoqueTimeout = null;
+      }
     };
-
-    schedule();
-
-    return () => clearTimeout(timeoutId);
   }, []);
 
   return estoque;
 }
 
+export function EstoqueUrgencia({ estoque, className }: { estoque: number; className?: string }) {
+  return (
+    <span className={cn("inline-flex items-center gap-1.5", className)}>
+      <span className="relative flex h-2.5 w-2.5 shrink-0" aria-hidden="true">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-destructive" />
+      </span>
+      <span>
+        Últimas <span className="tabular-nums">{estoque}</span> unidades em estoque
+      </span>
+    </span>
+  );
+}
+
 export function TopBar() {
-  const time = useCountdown();
+  const { time, expirado } = useCountdown();
+  const estoque = useEstoque();
   return (
     <div className="w-full bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide sm:text-sm">
@@ -163,11 +204,18 @@ export function TopBar() {
           <Truck className="h-4 w-4" aria-hidden="true" /> Frete grátis para todo o Brasil — só
           hoje
         </span>
-        <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground tabular-nums sm:text-sm">
-          <Timer className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
-          <span>Oferta expira em</span>
-          <span className="tabular-nums">{time}</span>
-        </span>
+        {expirado ? (
+          <EstoqueUrgencia
+            estoque={estoque}
+            className="rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground sm:text-sm"
+          />
+        ) : (
+          <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground tabular-nums sm:text-sm">
+            <Timer className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
+            <span>Oferta expira em</span>
+            <span className="tabular-nums">{time}</span>
+          </span>
+        )}
       </div>
     </div>
   );
