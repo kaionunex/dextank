@@ -132,32 +132,49 @@ function randomDelay() {
   );
 }
 
-/** Estoque em estoque que vai caindo sozinho, com persistência no navegador. */
+/** Store único: todos os pontos da página mostram o mesmo número de estoque. */
+let estoqueAtual = PRODUTO.estoqueLote;
+let estoqueTimeout: ReturnType<typeof setTimeout> | null = null;
+const estoqueListeners = new Set<(v: number) => void>();
+
+function iniciarEstoque() {
+  const state = readStock();
+  estoqueAtual = state.valor;
+  estoqueListeners.forEach((l) => l(estoqueAtual));
+
+  const schedule = () => {
+    estoqueTimeout = setTimeout(() => {
+      if (estoqueAtual > STOCK_MIN) {
+        let proximo = Math.max(STOCK_MIN, estoqueAtual - randomStep());
+        if (proximo === 13) proximo = STOCK_MIN; // nunca exibir 13
+        estoqueAtual = proximo;
+        saveStock({ valor: proximo, inicio: state.inicio });
+        estoqueListeners.forEach((l) => l(proximo));
+      }
+      schedule();
+    }, randomDelay());
+  };
+
+  schedule();
+}
+
+/** Estoque que vai caindo sozinho, com persistência no navegador. */
 export function useEstoque() {
   const [estoque, setEstoque] = useState(PRODUTO.estoqueLote);
 
   useEffect(() => {
-    const state = readStock();
-    setEstoque(state.valor);
+    const primeiro = estoqueListeners.size === 0;
+    estoqueListeners.add(setEstoque);
+    if (primeiro) iniciarEstoque();
+    else setEstoque(estoqueAtual);
 
-    let timeoutId: ReturnType<typeof setTimeout>;
-
-    const schedule = () => {
-      timeoutId = setTimeout(() => {
-        setEstoque((atual) => {
-          if (atual <= STOCK_MIN) return atual;
-          let proximo = Math.max(STOCK_MIN, atual - randomStep());
-          if (proximo === 13) proximo = STOCK_MIN; // nunca exibir 13
-          saveStock({ valor: proximo, inicio: state.inicio });
-          return proximo;
-        });
-        schedule();
-      }, randomDelay());
+    return () => {
+      estoqueListeners.delete(setEstoque);
+      if (estoqueListeners.size === 0 && estoqueTimeout) {
+        clearTimeout(estoqueTimeout);
+        estoqueTimeout = null;
+      }
     };
-
-    schedule();
-
-    return () => clearTimeout(timeoutId);
   }, []);
 
   return estoque;
