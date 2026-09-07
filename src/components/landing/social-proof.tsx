@@ -18,7 +18,7 @@ const VISIVEL_MS = 8000;
 const ONLINE_VISIVEL_MIN_MS = 5000;
 const ONLINE_VISIVEL_MAX_MS = 10000;
 const SCROLL_THRESHOLD = 120;
-const COMPRA_APOS_ONLINE_MS = 2000;
+const COMPRA_APOS_ONLINE_MS = 5500;
 
 function randomOnlineCount() {
   return Math.floor(Math.random() * 35) + 8; // 8 a 42
@@ -136,13 +136,10 @@ export function SocialProof() {
         >
           <div className="pointer-events-auto flex items-center gap-2.5 rounded-xl bg-surface/95 px-3.5 py-2.5 shadow-2xl ring-1 ring-border/60 backdrop-blur">
             <div className="relative flex h-5 w-5 shrink-0 items-center justify-center">
-              <Users
-                className="h-4 w-4 shrink-0 text-destructive"
-                aria-hidden="true"
-              />
+              <Users className="h-4 w-4 shrink-0 text-success" aria-hidden="true" />
               <span className="absolute -right-0.5 -top-0.5 flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-destructive" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
               </span>
             </div>
             <p className="whitespace-nowrap text-sm font-semibold text-foreground">
