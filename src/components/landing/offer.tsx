@@ -6,12 +6,12 @@ import {
 } from "@/components/ui/accordion";
 import { CreditCard, Flame, Lock, ShieldCheck, Timer, Truck } from "lucide-react";
 import produto from "@/assets/produto-isolado.png";
-import { CtaButton, useCountdown, useEstoque } from "./cta";
+import { CtaButton, EstoqueUrgencia, useCountdown, useEstoque } from "./cta";
 import { FAQ, PRODUTO } from "@/lib/landing";
 import { PaymentMethods } from "./payment-methods";
 
 export function Offer() {
-  const time = useCountdown();
+  const { time, expirado } = useCountdown();
   const estoque = useEstoque();
   const pct = Math.round((estoque / PRODUTO.estoqueTotal) * 100);
   return (
@@ -57,10 +57,21 @@ export function Offer() {
               <p className="mt-2 inline-flex items-center gap-1.5 rounded bg-success/15 px-2 py-1 text-xs font-semibold text-success">
                 Você economiza {PRODUTO.economia} — só no lote de lançamento
               </p>
-              <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
-                <Timer className="h-4 w-4" aria-hidden="true" /> A oferta expira em{" "}
-                <span className="tabular-nums">{time}</span>
-              </p>
+              {expirado ? (
+                <div className="mt-3 rounded-lg bg-destructive/15 px-3 py-2.5 text-center">
+                  <p className="flex flex-wrap items-center justify-center gap-2 font-display text-lg uppercase tracking-wide text-destructive sm:text-xl">
+                    <EstoqueUrgencia estoque={estoque} />
+                  </p>
+                  <p className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-foreground">
+                    Compre agora
+                  </p>
+                </div>
+              ) : (
+                <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
+                  <Timer className="h-4 w-4" aria-hidden="true" /> A oferta expira em{" "}
+                  <span className="tabular-nums">{time}</span>
+                </p>
+              )}
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span>
