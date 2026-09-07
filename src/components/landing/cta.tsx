@@ -63,16 +63,25 @@ function readDeadline(): number {
 
 export function useCountdown(minutes = 14) {
   const [left, setLeft] = useState(minutes * 60);
+  const [pronto, setPronto] = useState(false);
   useEffect(() => {
-    const deadline = readDeadline();
+    let deadline: number;
+    const override = new URLSearchParams(window.location.search).get("timer");
+    const segundos = Number(override);
+    if (override !== null && Number.isFinite(segundos) && segundos >= 0) {
+      deadline = Date.now() + segundos * 1000;
+    } else {
+      deadline = readDeadline();
+    }
     const tick = () => setLeft(Math.max(0, Math.floor((deadline - Date.now()) / 1000)));
     tick();
+    setPronto(true);
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, []);
   const mm = String(Math.floor(left / 60)).padStart(2, "0");
   const ss = String(left % 60).padStart(2, "0");
-  return `${mm}:${ss}`;
+  return { time: `${mm}:${ss}`, expirado: pronto && left <= 0 };
 }
 
 const STOCK_KEY = "dextank_stock";
