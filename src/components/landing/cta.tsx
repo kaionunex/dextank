@@ -79,13 +79,20 @@ export function useCountdown(minutes = 14) {
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, []);
+
+  const expirado = pronto && left <= 0;
+  useEffect(() => {
+    if (expirado) ativarEstoqueUrgencia();
+  }, [expirado]);
+
   const mm = String(Math.floor(left / 60)).padStart(2, "0");
   const ss = String(left % 60).padStart(2, "0");
-  return { time: `${mm}:${ss}`, expirado: pronto && left <= 0 };
+  return { time: `${mm}:${ss}`, expirado };
 }
 
 const STOCK_KEY = "dextank_stock";
 const STOCK_MIN = 9;
+const STOCK_URGENCIA = 9; // valor exibido quando o timer expira
 const STOCK_INTERVAL_MIN_MS = 20 * 1000;
 const STOCK_INTERVAL_MAX_MS = 30 * 1000;
 
@@ -156,6 +163,16 @@ function iniciarEstoque() {
   };
 
   schedule();
+}
+
+/** Quando o timer expira, o estoque salta para o valor de urgência
+ *  para que "Últimas X unidades em estoque" faça sentido. */
+export function ativarEstoqueUrgencia() {
+  if (estoqueAtual > STOCK_URGENCIA) {
+    estoqueAtual = STOCK_URGENCIA;
+    saveStock({ valor: estoqueAtual, inicio: Date.now() });
+    estoqueListeners.forEach((l) => l(estoqueAtual));
+  }
 }
 
 /** Estoque que vai caindo sozinho, com persistência no navegador. */
