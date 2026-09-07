@@ -79,9 +79,15 @@ export function useCountdown(minutes = 14) {
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, []);
+
+  const expirado = pronto && left <= 0;
+  useEffect(() => {
+    if (expirado) ativarEstoqueUrgencia();
+  }, [expirado]);
+
   const mm = String(Math.floor(left / 60)).padStart(2, "0");
   const ss = String(left % 60).padStart(2, "0");
-  return { time: `${mm}:${ss}`, expirado: pronto && left <= 0 };
+  return { time: `${mm}:${ss}`, expirado };
 }
 
 const STOCK_KEY = "dextank_stock";
