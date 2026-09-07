@@ -58,38 +58,27 @@ export function Offer() {
                 Você economiza {PRODUTO.economia} — só no lote de lançamento
               </p>
               {expirado ? (
-                <div className="mt-3 rounded-lg bg-destructive/15 px-3 py-2.5 text-center">
-                  <p className="flex flex-wrap items-center justify-center gap-2 font-display text-lg uppercase tracking-wide text-destructive sm:text-xl">
-                    <EstoqueUrgencia estoque={estoque} />
-                  </p>
-                  <p className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-foreground">
-                    Compre agora
-                  </p>
-                </div>
+                <EstoqueEscassez estoque={estoque} pct={pct} estilo={estilo} />
               ) : (
-                <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
-                  <Timer className="h-4 w-4" aria-hidden="true" /> A oferta expira em{" "}
-                  <span className="tabular-nums">{time}</span>
-                </p>
-              )}
-              <div className="mt-3">
-                <div className="flex items-center justify-between text-xs text-muted-foreground">
-                  <span>
-                    {expirado ? (
-                      "Estoque do lote de lançamento"
-                    ) : (
-                      <>
+                <>
+                  <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
+                    <Timer className="h-4 w-4" aria-hidden="true" /> A oferta expira em{" "}
+                    <span className="tabular-nums">{time}</span>
+                  </p>
+                  <div className="mt-3">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <span>
                         Restam <strong className="text-foreground tabular-nums">{estoque}</strong>{" "}
                         unidades em estoque
-                      </>
-                    )}
-                  </span>
-                  <span className="tabular-nums">{pct}% restante</span>
-                </div>
-                <div className="mt-1 h-2 overflow-hidden rounded bg-muted">
-                  <div className="h-full bg-destructive" style={{ width: `${pct}%` }} />
-                </div>
-              </div>
+                      </span>
+                      <span className="tabular-nums">{pct}% restante</span>
+                    </div>
+                    <div className="mt-1 h-2 overflow-hidden rounded bg-muted">
+                      <div className="h-full bg-destructive" style={{ width: `${pct}%` }} />
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
