@@ -197,15 +197,76 @@ export function useEstoque() {
   return estoque;
 }
 
-export function EstoqueUrgencia({ estoque, className }: { estoque: number; className?: string }) {
+export type EstiloUrgencia = 1 | 2 | 3;
+
+/** Permite alternar os estilos de escassez pelo endereço: ?estilo=1|2|3 */
+export function useEstiloUrgencia(): EstiloUrgencia {
+  const [estilo, setEstilo] = useState<EstiloUrgencia>(1);
+  useEffect(() => {
+    const v = Number(new URLSearchParams(window.location.search).get("estilo"));
+    if (v === 2 || v === 3) setEstilo(v);
+  }, []);
+  return estilo;
+}
+
+function Pulso({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-1.5", className)}>
-      <span className="relative flex h-2.5 w-2.5 shrink-0" aria-hidden="true">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
-        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-destructive" />
+    <span className={cn("relative flex h-2 w-2 shrink-0", className)} aria-hidden="true">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
+      <span className="relative inline-flex h-2 w-2 rounded-full bg-destructive" />
+    </span>
+  );
+}
+
+/** Versão compacta usada na barra do topo. */
+export function EstoqueUrgencia({
+  estoque,
+  estilo = 1,
+  className,
+}: {
+  estoque: number;
+  estilo?: EstiloUrgencia;
+  className?: string;
+}) {
+  if (estilo === 1) {
+    return (
+      <span
+        className={cn(
+          "inline-flex items-center gap-1.5 rounded-full border border-primary-foreground/25 bg-foreground/15 px-3 py-0.5 pb-1 text-xs font-medium normal-case tracking-normal text-primary-foreground sm:text-sm",
+          className,
+        )}
+      >
+        <span className="tabular-nums">{estoque}</span> unidades restantes
       </span>
+    );
+  }
+
+  if (estilo === 2) {
+    return (
+      <span
+        className={cn(
+          "inline-flex items-center gap-2 rounded-full bg-background px-3 py-0.5 pb-1 text-xs font-medium normal-case tracking-normal text-foreground sm:text-sm",
+          className,
+        )}
+      >
+        <Pulso />
+        <span>
+          Últimas <span className="font-semibold tabular-nums">{estoque}</span> unidades em estoque
+        </span>
+      </span>
+    );
+  }
+
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-background/80 px-3 py-0.5 pb-1 text-xs font-medium normal-case tracking-normal text-foreground backdrop-blur sm:text-sm",
+        className,
+      )}
+    >
+      <Pulso />
       <span>
-        Últimas <span className="tabular-nums">{estoque}</span> unidades em estoque
+        Últimas <span className="font-semibold tabular-nums">{estoque}</span> unidades em estoque
       </span>
     </span>
   );
@@ -214,6 +275,7 @@ export function EstoqueUrgencia({ estoque, className }: { estoque: number; class
 export function TopBar() {
   const { time, expirado } = useCountdown();
   const estoque = useEstoque();
+  const estilo = useEstiloUrgencia();
   return (
     <div className="w-full bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide sm:text-sm">
@@ -222,10 +284,7 @@ export function TopBar() {
           hoje
         </span>
         {expirado ? (
-          <EstoqueUrgencia
-            estoque={estoque}
-            className="rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground sm:text-sm"
-          />
+          <EstoqueUrgencia estoque={estoque} estilo={estilo} />
         ) : (
           <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground tabular-nums sm:text-sm">
             <Timer className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
