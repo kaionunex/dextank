@@ -86,6 +86,7 @@ export function useCountdown(minutes = 14) {
 
 const STOCK_KEY = "dextank_stock";
 const STOCK_MIN = 9;
+const STOCK_URGENCIA = 9; // valor exibido quando o timer expira
 const STOCK_INTERVAL_MIN_MS = 20 * 1000;
 const STOCK_INTERVAL_MAX_MS = 30 * 1000;
 
