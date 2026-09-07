@@ -159,6 +159,16 @@ function iniciarEstoque() {
   schedule();
 }
 
+/** Quando o timer expira, o estoque salta para o valor de urgência
+ *  para que "Últimas X unidades em estoque" faça sentido. */
+export function ativarEstoqueUrgencia() {
+  if (estoqueAtual > STOCK_URGENCIA) {
+    estoqueAtual = STOCK_URGENCIA;
+    saveStock({ valor: estoqueAtual, inicio: Date.now() });
+    estoqueListeners.forEach((l) => l(estoqueAtual));
+  }
+}
+
 /** Estoque que vai caindo sozinho, com persistência no navegador. */
 export function useEstoque() {
   const [estoque, setEstoque] = useState(PRODUTO.estoqueLote);
