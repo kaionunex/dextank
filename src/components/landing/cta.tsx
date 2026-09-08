@@ -87,7 +87,7 @@ export function useCountdown(minutes = 14) {
 
   const mm = String(Math.floor(left / 60)).padStart(2, "0");
   const ss = String(left % 60).padStart(2, "0");
-  return { time: `${mm}:${ss}`, expirado };
+  return { time: `${mm}:${ss}`, expirado, left };
 }
 
 const STOCK_KEY = "dextank_stock";
