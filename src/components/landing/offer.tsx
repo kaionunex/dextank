@@ -29,7 +29,6 @@ function EstoqueEscassez({ estoque, pct }: { estoque: number; pct: number }) {
 export function Offer() {
   const { time, expirado } = useCountdown();
   const estoque = useEstoque();
-  const estilo = useEstiloUrgencia();
   const pct = Math.round((estoque / PRODUTO.estoqueTotal) * 100);
   return (
     <section className="py-20 pb-[50px]" id="oferta">
