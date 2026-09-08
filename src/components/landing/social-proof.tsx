@@ -128,70 +128,72 @@ export function SocialProof() {
   };
 
   return (
-    <>
-      {onlineVisivel && (
-        <div
-          aria-live="polite"
-          className="pointer-events-none fixed bottom-[110px] left-3 z-40 max-w-[19rem] transition-all duration-500 sm:bottom-[110px] sm:left-5 lg:bottom-5 translate-y-0 opacity-100"
-        >
-          <div className="pointer-events-auto flex items-center gap-2.5 rounded-xl bg-surface/95 px-3.5 py-2.5 shadow-2xl ring-1 ring-border/60 backdrop-blur">
-            <div className="relative flex h-5 w-5 shrink-0 items-center justify-center">
-              <Users className="h-4 w-4 shrink-0 text-success" aria-hidden="true" />
-              <span className="absolute -right-0.5 -top-0.5 flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
-              </span>
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40">
+      <div className="relative mx-auto h-0 max-w-6xl px-4">
+        {onlineVisivel && (
+          <div
+            aria-live="polite"
+            className="pointer-events-none absolute bottom-[110px] left-0 z-40 max-w-[19rem] translate-y-0 opacity-100 transition-all duration-500 sm:bottom-[110px] lg:bottom-5"
+          >
+            <div className="pointer-events-auto flex items-center gap-2.5 rounded-xl bg-surface/95 px-3.5 py-2.5 shadow-2xl ring-1 ring-border/60 backdrop-blur">
+              <div className="relative flex h-5 w-5 shrink-0 items-center justify-center">
+                <Users className="h-4 w-4 shrink-0 text-success" aria-hidden="true" />
+                <span className="absolute -right-0.5 -top-0.5 flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
+                </span>
+              </div>
+              <p className="whitespace-nowrap text-sm font-semibold text-foreground">
+                {onlineCount} pessoas estão vendo agora
+              </p>
+              <button
+                type="button"
+                aria-label="Fechar aviso"
+                onClick={fechar}
+                className="ml-1 text-muted-foreground/60 transition-colors hover:text-foreground"
+              >
+                <X className="h-3.5 w-3.5" aria-hidden="true" />
+              </button>
             </div>
-            <p className="whitespace-nowrap text-sm font-semibold text-foreground">
-              {onlineCount} pessoas estão vendo agora
-            </p>
-            <button
-              type="button"
-              aria-label="Fechar aviso"
-              onClick={fechar}
-              className="ml-1 text-muted-foreground/60 transition-colors hover:text-foreground"
-            >
-              <X className="h-3.5 w-3.5" aria-hidden="true" />
-            </button>
           </div>
-        </div>
-      )}
+        )}
 
-      {visivel && aviso && (
-        <div
-          aria-live="polite"
-          className={`pointer-events-none fixed bottom-[110px] left-3 z-40 max-w-[19rem] transition-all duration-500 sm:bottom-[110px] sm:left-5 lg:bottom-5 ${
-            visivel ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
-          }`}
-        >
-          <div className="pointer-events-auto relative flex items-center gap-3 rounded-xl bg-surface/95 p-2.5 pr-8 shadow-2xl ring-1 ring-border/60 backdrop-blur">
-            <img
-              src={produto}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              className="h-11 w-11 shrink-0 rounded-lg bg-background object-contain"
-            />
-            <div className="min-w-0 leading-tight">
-              <p className="truncate text-sm font-semibold text-foreground">
-                {aviso.nome} — {aviso.local}
-              </p>
-              <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
-                <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-success" aria-hidden="true" />
-                {aviso.tempo === "agora mesmo" ? "Acabou de comprar" : `Comprou ${aviso.tempo}`}
-              </p>
+        {visivel && aviso && (
+          <div
+            aria-live="polite"
+            className={`pointer-events-none absolute bottom-[110px] left-0 z-40 max-w-[19rem] transition-all duration-500 sm:bottom-[110px] lg:bottom-5 ${
+              visivel ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+            }`}
+          >
+            <div className="pointer-events-auto relative flex items-center gap-3 rounded-xl bg-surface/95 p-2.5 pr-8 shadow-2xl ring-1 ring-border/60 backdrop-blur">
+              <img
+                src={produto}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                className="h-11 w-11 shrink-0 rounded-lg bg-background object-contain"
+              />
+              <div className="min-w-0 leading-tight">
+                <p className="truncate text-sm font-semibold text-foreground">
+                  {aviso.nome} — {aviso.local}
+                </p>
+                <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-success" aria-hidden="true" />
+                  {aviso.tempo === "agora mesmo" ? "Acabou de comprar" : `Comprou ${aviso.tempo}`}
+                </p>
+              </div>
+              <button
+                type="button"
+                aria-label="Fechar aviso"
+                onClick={fechar}
+                className="absolute right-2 top-2 text-muted-foreground/60 transition-colors hover:text-foreground"
+              >
+                <X className="h-3.5 w-3.5" aria-hidden="true" />
+              </button>
             </div>
-            <button
-              type="button"
-              aria-label="Fechar aviso"
-              onClick={fechar}
-              className="absolute right-2 top-2 text-muted-foreground/60 transition-colors hover:text-foreground"
-            >
-              <X className="h-3.5 w-3.5" aria-hidden="true" />
-            </button>
           </div>
-        </div>
-      )}
-    </>
+        )}
+      </div>
+    </div>
   );
 }
