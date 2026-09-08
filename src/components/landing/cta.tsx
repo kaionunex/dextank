@@ -275,10 +275,11 @@ export function TopBar() {
         {expirado ? (
           <EstoqueUrgencia estoque={estoque} estilo={3} />
         ) : (
-          <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground tabular-nums sm:text-sm">
+          <span className="inline-flex animate-pulse items-center gap-2 rounded-full border border-primary-foreground/20 bg-background/80 px-3 py-0.5 pb-1 text-xs font-medium normal-case tracking-normal text-foreground backdrop-blur sm:text-sm">
             <Timer className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
-            <span>Oferta expira em</span>
-            <span className="tabular-nums">{time}</span>
+            <span>
+              Oferta expira em <span className="font-semibold tabular-nums">{time}</span>
+            </span>
           </span>
         )}
       </div>
