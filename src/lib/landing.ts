@@ -28,8 +28,9 @@ export const EMPRESA = {
   cnpj: "62.495.891/0001-51",
   email: "sac@dextank.com.br",
   telefone: "(11) 4003-1000",
-  endereco:
-    "Av. Brigadeiro Faria Lima, 1572, Sala 1022, Ed. Barão de Rothschild — Jardim Paulistano, São Paulo/SP, CEP 01451-917",
+  endereco: `Av. Brigadeiro Faria Lima, 1572, Sala 1022
+Ed. Barão de Rothschild — Jardim Paulistano
+São Paulo, SP - CEP 01451-917`,
 };
 
 export const FAQ = [
