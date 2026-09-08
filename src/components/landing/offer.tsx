@@ -6,76 +6,21 @@ import {
 } from "@/components/ui/accordion";
 import { CreditCard, Flame, Lock, ShieldCheck, Timer, Truck } from "lucide-react";
 import produto from "@/assets/produto-isolado.png";
-import {
-  CtaButton,
-  useCountdown,
-  useEstiloUrgencia,
-  useEstoque,
-  type EstiloUrgencia,
-} from "./cta";
+import { CtaButton, useCountdown, useEstoque } from "./cta";
 import { FAQ, PRODUTO } from "@/lib/landing";
 import { PaymentMethods } from "./payment-methods";
 
-function EstoqueEscassez({
-  estoque,
-  pct,
-  estilo,
-}: {
-  estoque: number;
-  pct: number;
-  estilo: EstiloUrgencia;
-}) {
-  if (estilo === 1) {
-    return (
-      <div className="mt-3">
-        <div className="flex items-baseline justify-between gap-3">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-destructive">
-            Estoque crítico
-          </span>
-          <span className="text-sm font-medium text-foreground">
-            Últimas <span className="tabular-nums">{estoque}</span> unidades
-          </span>
-        </div>
-        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted">
-          <div className="h-full rounded-full bg-destructive" style={{ width: `${pct}%` }} />
-        </div>
-      </div>
-    );
-  }
-
-  if (estilo === 2) {
-    return (
-      <div className="mt-3 rounded-xl bg-destructive/10 p-3">
-        <div className="flex items-baseline justify-between gap-3">
-          <span className="text-sm font-semibold text-destructive">Estoque quase esgotado</span>
-          <span className="text-xs font-semibold text-foreground">
-            <span className="tabular-nums">{estoque}</span> unidades
-          </span>
-        </div>
-        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-destructive/20">
-          <div className="h-full rounded-full bg-destructive" style={{ width: `${pct}%` }} />
-        </div>
-      </div>
-    );
-  }
-
+function EstoqueEscassez({ estoque, pct }: { estoque: number; pct: number }) {
   return (
-    <div className="mt-3">
+    <div className="mt-3 rounded-xl bg-destructive/10 p-3">
       <div className="flex items-baseline justify-between gap-3">
-        <span className="text-[11px] font-semibold uppercase tracking-wider text-destructive">
-          Estoque crítico
-        </span>
-        <span className="text-xs font-medium text-muted-foreground">
-          Apenas <span className="tabular-nums text-foreground">{estoque}</span> unidades restando
+        <span className="text-sm font-semibold text-destructive">Estoque quase esgotado</span>
+        <span className="text-xs font-semibold text-foreground">
+          Últimas <span className="tabular-nums">{estoque}</span> unidades
         </span>
       </div>
-      <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-muted">
-        <div
-          className="relative h-full rounded-full bg-gradient-to-r from-destructive/70 to-destructive shadow-[0_0_12px_-2px_var(--color-destructive)]"
-          style={{ width: `${pct}%` }}
-        >
-          <span className="absolute inset-0 animate-pulse rounded-full bg-foreground/20" />
-        </div>
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-destructive/20">
+        <div className="h-full rounded-full bg-destructive" style={{ width: `${pct}%` }} />
       </div>
     </div>
   );
@@ -84,7 +29,6 @@ function EstoqueEscassez({
 export function Offer() {
   const { time, expirado } = useCountdown();
   const estoque = useEstoque();
-  const estilo = useEstiloUrgencia();
   const pct = Math.round((estoque / PRODUTO.estoqueTotal) * 100);
   return (
     <section className="py-20 pb-[50px]" id="oferta">
@@ -130,7 +74,7 @@ export function Offer() {
                 Você economiza {PRODUTO.economia} — só no lote de lançamento
               </p>
               {expirado ? (
-                <EstoqueEscassez estoque={estoque} pct={pct} estilo={estilo} />
+                <EstoqueEscassez estoque={estoque} pct={pct} />
               ) : (
                 <>
                   <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
