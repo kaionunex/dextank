@@ -201,10 +201,10 @@ export type EstiloUrgencia = 1 | 2 | 3;
 
 /** Permite alternar os estilos de escassez pelo endereço: ?estilo=1|2|3 */
 export function useEstiloUrgencia(): EstiloUrgencia {
-  const [estilo, setEstilo] = useState<EstiloUrgencia>(1);
+  const [estilo, setEstilo] = useState<EstiloUrgencia>(3);
   useEffect(() => {
     const v = Number(new URLSearchParams(window.location.search).get("estilo"));
-    if (v === 2 || v === 3) setEstilo(v);
+    if (v === 1 || v === 2 || v === 3) setEstilo(v);
   }, []);
   return estilo;
 }
