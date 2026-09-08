@@ -49,7 +49,7 @@ function EstoqueEscassez({
         <div className="flex items-baseline justify-between gap-3">
           <span className="text-sm font-semibold text-destructive">Estoque quase esgotado</span>
           <span className="text-xs font-semibold text-foreground">
-            <span className="tabular-nums">{estoque}</span> unidades
+            Últimas <span className="tabular-nums">{estoque}</span> unidades
           </span>
         </div>
         <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-destructive/20">
