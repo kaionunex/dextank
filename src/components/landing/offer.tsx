@@ -74,7 +74,7 @@ export function Offer() {
                 Você economiza {PRODUTO.economia} — só no lote de lançamento
               </p>
               {expirado ? (
-                <EstoqueEscassez estoque={estoque} pct={pct} estilo={estilo} />
+                <EstoqueEscassez estoque={estoque} pct={pct} />
               ) : (
                 <>
                   <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
