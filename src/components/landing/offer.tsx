@@ -26,8 +26,46 @@ function EstoqueEscassez({ estoque, pct }: { estoque: number; pct: number }) {
   );
 }
 
+function OfertaAtiva({
+  time,
+  left,
+  estoque,
+  pct,
+}: {
+  time: string;
+  left: number;
+  estoque: number;
+  pct: number;
+}) {
+  const pctTempo = Math.round((left / (14 * 60)) * 100);
+  return (
+    <div className="mt-3 rounded-xl bg-destructive/10 p-3">
+      <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-destructive">
+          <Timer className="h-4 w-4" aria-hidden="true" /> Oferta expira em
+        </span>
+        <span className="font-display text-base font-semibold tabular-nums text-foreground">
+          {time}
+        </span>
+      </div>
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-destructive/20">
+        <div className="h-full rounded-full bg-destructive" style={{ width: `${pctTempo}%` }} />
+      </div>
+      <div className="mt-3 flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+        <span className="text-xs font-semibold text-foreground">
+          Restam <span className="tabular-nums">{estoque}</span> unidades em estoque
+        </span>
+        <span className="text-xs font-semibold tabular-nums text-muted-foreground">{pct}% restante</span>
+      </div>
+      <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted">
+        <div className="h-full bg-destructive" style={{ width: `${pct}%` }} />
+      </div>
+    </div>
+  );
+}
+
 export function Offer() {
-  const { time, expirado } = useCountdown();
+  const { time, expirado, left } = useCountdown();
   const estoque = useEstoque();
   const pct = Math.round((estoque / PRODUTO.estoqueTotal) * 100);
   return (
@@ -76,24 +114,7 @@ export function Offer() {
               {expirado ? (
                 <EstoqueEscassez estoque={estoque} pct={pct} />
               ) : (
-                <>
-                  <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
-                    <Timer className="h-4 w-4" aria-hidden="true" /> A oferta expira em{" "}
-                    <span className="tabular-nums">{time}</span>
-                  </p>
-                  <div className="mt-3">
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <span>
-                        Restam <strong className="text-foreground tabular-nums">{estoque}</strong>{" "}
-                        unidades em estoque
-                      </span>
-                      <span className="tabular-nums">{pct}% restante</span>
-                    </div>
-                    <div className="mt-1 h-2 overflow-hidden rounded bg-muted">
-                      <div className="h-full bg-destructive" style={{ width: `${pct}%` }} />
-                    </div>
-                  </div>
-                </>
+                <OfertaAtiva time={time} left={left} estoque={estoque} pct={pct} />
               )}
             </div>
 
