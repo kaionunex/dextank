@@ -114,24 +114,7 @@ export function Offer() {
               {expirado ? (
                 <EstoqueEscassez estoque={estoque} pct={pct} />
               ) : (
-                <>
-                  <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-destructive">
-                    <Timer className="h-4 w-4" aria-hidden="true" /> A oferta expira em{" "}
-                    <span className="tabular-nums">{time}</span>
-                  </p>
-                  <div className="mt-3">
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <span>
-                        Restam <strong className="text-foreground tabular-nums">{estoque}</strong>{" "}
-                        unidades em estoque
-                      </span>
-                      <span className="tabular-nums">{pct}% restante</span>
-                    </div>
-                    <div className="mt-1 h-2 overflow-hidden rounded bg-muted">
-                      <div className="h-full bg-destructive" style={{ width: `${pct}%` }} />
-                    </div>
-                  </div>
-                </>
+                <OfertaAtiva time={time} left={left} estoque={estoque} pct={pct} />
               )}
             </div>
 
