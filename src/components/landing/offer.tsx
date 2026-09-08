@@ -13,7 +13,7 @@ import { PaymentMethods } from "./payment-methods";
 function EstoqueEscassez({ estoque, pct }: { estoque: number; pct: number }) {
   return (
     <div className="mt-3 rounded-xl bg-destructive/10 p-3">
-      <div className="flex items-baseline justify-between gap-3">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
         <span className="text-sm font-semibold text-destructive">Estoque quase esgotado</span>
         <span className="text-xs font-semibold text-foreground">
           Últimas <span className="tabular-nums">{estoque}</span> unidades
