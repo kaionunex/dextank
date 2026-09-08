@@ -26,6 +26,44 @@ function EstoqueEscassez({ estoque, pct }: { estoque: number; pct: number }) {
   );
 }
 
+function OfertaAtiva({
+  time,
+  left,
+  estoque,
+  pct,
+}: {
+  time: string;
+  left: number;
+  estoque: number;
+  pct: number;
+}) {
+  const pctTempo = Math.round((left / (14 * 60)) * 100);
+  return (
+    <div className="mt-3 rounded-xl bg-destructive/10 p-3">
+      <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-destructive">
+          <Timer className="h-4 w-4" aria-hidden="true" /> Oferta expira em
+        </span>
+        <span className="font-display text-base font-semibold tabular-nums text-foreground">
+          {time}
+        </span>
+      </div>
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-destructive/20">
+        <div className="h-full rounded-full bg-destructive" style={{ width: `${pctTempo}%` }} />
+      </div>
+      <div className="mt-3 flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+        <span className="text-xs font-semibold text-foreground">
+          Restam <span className="tabular-nums">{estoque}</span> unidades em estoque
+        </span>
+        <span className="text-xs font-semibold tabular-nums text-muted-foreground">{pct}% restante</span>
+      </div>
+      <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted">
+        <div className="h-full bg-destructive" style={{ width: `${pct}%` }} />
+      </div>
+    </div>
+  );
+}
+
 export function Offer() {
   const { time, expirado } = useCountdown();
   const estoque = useEstoque();
