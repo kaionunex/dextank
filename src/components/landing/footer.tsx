@@ -69,8 +69,9 @@ export function Footer() {
               {EMPRESA.email}
             </a>
             <p className="mt-1 text-xs leading-relaxed">
-              Precisa de ajuda? Entre em contato conosco — atendimento de segunda a sexta, das 9h às
-              18h.
+              Precisa de ajuda?
+              <br />
+              Entre em contato conosco.
             </p>
           </div>
         </div>
