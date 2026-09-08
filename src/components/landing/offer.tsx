@@ -65,7 +65,7 @@ function OfertaAtiva({
 }
 
 export function Offer() {
-  const { time, expirado } = useCountdown();
+  const { time, expirado, left } = useCountdown();
   const estoque = useEstoque();
   const pct = Math.round((estoque / PRODUTO.estoqueTotal) * 100);
   return (
