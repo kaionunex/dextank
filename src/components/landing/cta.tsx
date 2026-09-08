@@ -275,7 +275,6 @@ export function EstoqueUrgencia({
 export function TopBar() {
   const { time, expirado } = useCountdown();
   const estoque = useEstoque();
-  const estilo = useEstiloUrgencia();
   return (
     <div className="w-full bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide sm:text-sm">
@@ -284,7 +283,7 @@ export function TopBar() {
           hoje
         </span>
         {expirado ? (
-          <EstoqueUrgencia estoque={estoque} estilo={estilo} />
+          <EstoqueUrgencia estoque={estoque} estilo={3} />
         ) : (
           <span className="inline-flex animate-pulse items-center gap-1.5 rounded bg-background px-2 py-0.5 pb-1 text-xs font-bold text-foreground tabular-nums sm:text-sm">
             <Timer className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
