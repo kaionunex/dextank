@@ -8,9 +8,9 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   vite: {
-    // Lovable serves its live preview from the root. The production build keeps
-    // the Hostinger subdirectory used by the published static site.
-    base: process.env["NODE_ENV"] === "development" ? "/" : "/",
+    // Lovable serves its live preview from the root. The production build is
+    // hosted in the /fz15/ subdirectory.
+    base: process.env["NODE_ENV"] === "development" ? "/" : "/fz15/",
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
